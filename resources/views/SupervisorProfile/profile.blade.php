@@ -30,7 +30,7 @@
                         <h4>PSM Title:</h4>
                     </td>
                     <td width="20%">
-                        <h2>Nametest</h2>
+                        <h2>Name</h2>
                         <h2>Supervisor ID</h2>
                         <h2>Faculty</h2>
                         <h2>Expertise</h2>
