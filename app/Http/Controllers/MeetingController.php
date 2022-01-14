@@ -9,7 +9,7 @@ class MeetingController extends Controller
 {
     //create function to read from form 
 
-    function addMeetingBooking()
+    function addMeetingBooking() //student add meeting booking
     {
         // $var = new Meeting;
         // $var->SV_ID = $req->SV_id;
@@ -25,5 +25,22 @@ class MeetingController extends Controller
         //$students = students::where('studentID', '=', $STD_ID)->get();
         return View('Meeting.AddMeetingBooking');
     }
-   
+
+    function viewMeetingBooking() //student view meeting booking
+    {
+        return View('Meeting.ViewMeetingBooking');
+    }
+    function editMeetingBooking()  //sv add meeting status
+    {
+        return View('Meeting.EditMeetingBooking'); 
+    }
+    function retriveMeeting()  //sv view meeting list detail
+    {
+        return View('Meeting.RetriveMeeting');
+    }
+    function addMeetingStatus()  //sv add meeting status
+    {
+        return View('Meeting.AddMeetingStatus'); 
+    }
 }
+

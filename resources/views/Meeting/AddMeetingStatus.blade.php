@@ -7,7 +7,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Student Profile</h1>
+          <h1 class="m-0 text-dark">Supervisor Profile</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -25,13 +25,11 @@
     <div class="container">
       <table style="width:100%">
         <tr>
-         	<center>
-			 <h1 style="text-align: center;">MEETING BOOKING FORM</h1>
+        <center>
+			 <h1 style="text-align: center;">ADD MEETING STATUS</h1>
         </br>
-		<button <a href="">Add Meeting Booking</a></button>
-        <button <a href="" target="_blank">View Meeting Booking </a></button>
-        <button <a href="" target="_blank">Edit Meeting Booking </a></button>
-
+		<button <a href="">View Meeting</a></button>
+        <button <a href="" target="_blank">Add Meeting Status </a></button>
   </center>
 	<center><fieldset>
 		     <br>
@@ -51,50 +49,26 @@
 					</p>
 				</td>
                 </tr>
-				
+			
 				<td><td>
 					<p>
 					<td>
-					<label for=Meeting_Date>Meeting Date:</label>
+					<label for="Meeting_Status">Meeting status:</label>
 					</td>
 					<td>
-					<input type="date" name="Meeting_date" id="Meeting_Date">
+					<input type="text" name="Meeting_Status" id="Meeting_Status">
 					</td>
 					</p>
 				</td>
 				</tr>
 
-				<td><td>
+                <td><td>
 					<p>
 					<td>
-					<label for=Meeting_Start>Start Time:</label>
+					<label for="Meeting_Comment">Meeting Comment:</label>
 					</td>
 					<td>
-					<input type="time" name="Meeting_start" id="Meeting_Start">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td><td>
-					<p>
-					<td>
-					<label for=Meeting_End>End Time:</label>
-					</td>
-					<td>
-					<input type="time" name="Meeting_end" id="Meeting_End">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td><td>
-					<p>
-					<td>
-					<label for="Meeting_Purpose">Meeting purpose:</label>
-					</td>
-					<td>
-					<input type="text" name="Meeting_purpose" id="Meeting_Purpose">
+					<input type="text" name="Meeting_Comment" id="Meeting_Comment">
 					</td>
 					</p>
 				</td>

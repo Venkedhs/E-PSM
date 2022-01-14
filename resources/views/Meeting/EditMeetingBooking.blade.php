@@ -26,12 +26,11 @@
       <table style="width:100%">
         <tr>
          	<center>
-			 <h1 style="text-align: center;">MEETING BOOKING FORM</h1>
+			 <h1 style="text-align: center;">EDIT MEETING</h1>
         </br>
 		<button <a href="">Add Meeting Booking</a></button>
         <button <a href="" target="_blank">View Meeting Booking </a></button>
         <button <a href="" target="_blank">Edit Meeting Booking </a></button>
-
   </center>
 	<center><fieldset>
 		     <br>
@@ -101,7 +100,7 @@
 				</tr>
 			</table>
 			<center>
-			<input type="submit" name="Submit" id="Submit" value="Submit" method="post">
+			<input type="submit" name="Save" id="Save" value="Save" method="post">
             </center>
 			</p>
 			</form>
