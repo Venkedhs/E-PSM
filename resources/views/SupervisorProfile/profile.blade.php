@@ -40,20 +40,24 @@
                         <h2>Student Name</h2>
                     </td>
                     <td width="50%">
-                        <h3>:&nbsp&nbsp{{$supervisor[0]->name}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisor[0]->svID}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisor[0]->faculty}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisor[0]->expertise}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisor[0]->office}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisor[0]->phone}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisor[0]->email}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisor[0]->std_name}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->name}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->svID}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->faculty}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->expertise}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->office}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->phone}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->email}}</h3>
+                        @if(empty($supervisors[0]->std_name))
+                        <h3>:</h3>
+                        @else
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->std_name}}</h3>
+                        @endif
                     </td>
                 </tr>
             </table>
             <h2><br></h2>
             <h2><br></h2>
-            <a class="button-73" role="button" href="EditProfile">Edit Profile</a>
+            <a class="button-73" role="button" href="SVedit">Edit Profile</a>
             <h2><br></h2>
         </div><!-- /.container -->
     </div>

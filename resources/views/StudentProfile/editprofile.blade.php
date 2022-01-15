@@ -11,7 +11,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item active">Utama</li>
+                        <li class="breadcrumb-item active">Main</li>
                         <!-- <li class="breadcrumb-item active">Starter Page</li> -->
                     </ol>
                 </div><!-- /.col -->
@@ -27,7 +27,7 @@
                 {{ csrf_field() }}
                 <table style="width:100%">
                     <tr>
-                        <td width="30%" class="topleft"><img src="./images/neelofa.png" width="270" height="180">
+                        <td width="30%" class="topleft"><img src="./images/profileIcon.jpg" width="200" height="180">
                             <h2><br></h2>
                             <h4>PSM Title:</h4>
                         </td>
@@ -38,7 +38,7 @@
                                         <h2><br> Name</h2>
                                     </td>
                                     <td width="70%">
-                                        <h3><br>:&nbsp&nbsp{{$students[0]->name}}></h3>
+                                        <h3><br>:&nbsp&nbsp{{$students[0]->name}}</h3>
                                     </td>
                                 </tr>
                                 <tr>

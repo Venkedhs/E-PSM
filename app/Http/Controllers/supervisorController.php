@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\supervisor;
+use App\Models\supervisors;
 use Illuminate\Http\Request;
 
 class supervisorController extends Controller
@@ -15,15 +15,15 @@ class supervisorController extends Controller
     public function index()
     {
         $Sv_ID = session()->get('logged_user');
-        $supervisor = supervisor::where('svID', '=', $Sv_ID)->get();
-        return View('SupervisorProfile.profile')->with('supervisor', $supervisor);
+        $supervisors = supervisors::where('svID', '=', $Sv_ID)->get();
+        return View('SupervisorProfile.profile')->with('supervisors', $supervisors);
     }
 
     public function editprofile()
     {
         $Sv_ID = session()->get('logged_user');
-        $supervisor = supervisor::where('svID', '=', $Sv_ID)->get();
-        return View('SupervisorProfile.editprofile')->with('supervisor', $supervisor);
+        $supervisors = supervisors::where('svID', '=', $Sv_ID)->get();
+        return View('SupervisorProfile.editprofile')->with('supervisors', $supervisors);
         // var_dump($students);
 
     }
@@ -31,9 +31,9 @@ class supervisorController extends Controller
     public function updateprofile(Request $req)
     {
         $name = $req->input('name');
-        $supervisor = supervisor::where('svID', '=', session()->get('logged_user'))->get()->first();
-        $supervisor->name = $name;
-        $supervisor->save();
+        $supervisors = supervisors::where('svID', '=', session()->get('logged_user'))->get()->first();
+        $supervisors->name = $name;
+        $supervisors->save();
         return redirect("supervisorprofile");
     }
 }

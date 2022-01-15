@@ -8,6 +8,7 @@ use Validator;
 use Exception;
 use App\Models\users as users;
 use App\Models\students as student;
+use App\Models\supervisors as supervisor;
 
 
 class UsersController extends Controller
@@ -49,7 +50,20 @@ class UsersController extends Controller
                 Session::put('logged_user', $userID);   //put the data and in session
                 Session::put('name', $name);
 
-                return redirect('home');
+                if ($user_type = 'Student') {
+                    return redirect('home');
+                } elseif ($user_type = 'Supervisor') {
+                    return redirect('supervisorprofile');
+                }
+                // elseif($user_type='Coordinator')
+                // {
+                //     return redirect('coordinatorprofile');
+                // }
+                // elseif($user_type='Technician')
+                // {
+                //     return redirect('technicianprofile');
+                // }
+
             } else {
 
                 // custom back validator message
@@ -124,8 +138,11 @@ class UsersController extends Controller
             $student = new student;
             $student->userID = $userID;
             $student->save();
+        } elseif ($req->user_type = 'Supervisor') {
+            $supervisor = new supervisor;
+            $supervisor->userID = $userID;
+            $supervisor->save();
         }
-
         $details = [
             'type' => 'Registration',
             'status' => 'Success',
@@ -139,7 +156,12 @@ class UsersController extends Controller
         Session::put('user_type', $user_type);
         Session::put('logged_user', $userID);   //put the data and in session
         Session::put('name', $name);
-        return redirect('home');
+
+        if ($user_type = 'Student') {
+            return redirect('home');
+        } elseif ($user_type = 'Supervisor') {
+            return redirect('supervisorprofile');
+        }
 
         // try {
 

@@ -16,11 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $logged_user = session()->get('logged_user');
+    $user_type = session()->get('user_type');
+
 
     if (!$logged_user) {
         return view('welcome');
     } else {
-        return redirect('home');
+
+        if ($user_type = 'Student') {
+            return redirect('home');
+        } elseif ($user_type = 'Supervisor') {
+            return redirect('supervisorprofile');
+        }
     }
 });
 
@@ -49,7 +56,6 @@ Route::get('/logout', 'UsersController@logout');
 use App\Http\Controllers\studentController;
 
 Route::get('home', [studentController::class, 'index']);
-
 Route::get('STDedit', [studentController::class, 'editprofile']);
 Route::post('update_profile', 'studentController@updateprofile');
 
@@ -57,7 +63,7 @@ use App\Http\Controllers\supervisorController;
 
 Route::get('supervisorprofile', [supervisorController::class, 'index']);
 Route::get('SVedit', [supervisorController::class, 'editprofile']);
-//Route::post('update_profile', 'supervisorController@updateprofile');
+Route::post('update_profile', 'supervisorController@updateprofile');
 // url tak boleh sama tapi ada cara kalau nak pakai url sama
 
 //MeetingBooking

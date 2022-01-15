@@ -11,7 +11,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item active">Utama</li>
+            <li class="breadcrumb-item active">Main</li>
             <!-- <li class="breadcrumb-item active">Starter Page</li> -->
           </ol>
         </div><!-- /.col -->
@@ -25,14 +25,13 @@
     <div class="container">
       <table style="width:100%">
         <tr>
-          <td width="30%" class="topleft"><img src="./images/neelofa.png" width="270" height="180">
+          <td width="30%" class="topleft"><img src="./images/profileIcon.jpg" width="200" height="180">
             <h2><br></h2>
             <h4>PSM Title:</h4>
           </td>
           <td width="20%">
-            <h2>Matric ID</h2>
-            <h2>Password</h2>
             <h2>Name</h2>
+            <h2>Matric ID</h2>
             <h2>Faculty</h2>
             <h2>Course</h2>
             <h2>Sem & Year</h2>
@@ -42,9 +41,8 @@
             <h2>Supervisor Name</h2>
           </td>
           <td width="50%">
-            <h3>:&nbsp&nbsp{{$students[0]->userID}}</h3>
-            <h3>:&nbsp&nbsp{{$students[0]->password}}</h3>
             <h3>:&nbsp&nbsp{{$students[0]->name}}</h3>
+            <h3>:&nbsp&nbsp{{$students[0]->userID}}</h3>
             <h3>:&nbsp&nbsp{{$students[0]->faculty}}</h3>
             <h3>:&nbsp&nbsp{{$students[0]->course}}</h3>
             <h3>:&nbsp&nbsp{{$students[0]->sem_year}}</h3>

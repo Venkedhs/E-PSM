@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Technician extends Migration
+class CreateSupervisors extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class Technician extends Migration
      */
     public function up()
     {
-        Schema::create('technician', function (Blueprint $table) {
+        Schema::create('supervisors', function (Blueprint $table) {
+            $table->id();
+            $table->string('faculty');
+            $table->string('expertise');
             $table->string('office');
             $table->string('userID');
+            $table->string('std_name');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class Technician extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('technician');
+        Schema::dropIfExists('supervisors');
     }
 }
