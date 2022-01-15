@@ -41,7 +41,7 @@
                     </td>
                     <td width="50%">
                         <h3>:&nbsp&nbsp{{$supervisors[0]->name}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->svID}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->userID}}</h3>
                         <h3>:&nbsp&nbsp{{$supervisors[0]->faculty}}</h3>
                         <h3>:&nbsp&nbsp{{$supervisors[0]->expertise}}</h3>
                         <h3>:&nbsp&nbsp{{$supervisors[0]->office}}</h3>

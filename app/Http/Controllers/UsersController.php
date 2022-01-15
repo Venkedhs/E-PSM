@@ -50,9 +50,9 @@ class UsersController extends Controller
                 Session::put('logged_user', $userID);   //put the data and in session
                 Session::put('name', $name);
 
-                if ($user_type = 'Student') {
+                if ($user_type == 'Student') {
                     return redirect('home');
-                } elseif ($user_type = 'Supervisor') {
+                } elseif ($user_type == 'Supervisor') {
                     return redirect('supervisorprofile');
                 }
                 // elseif($user_type='Coordinator')
@@ -134,11 +134,11 @@ class UsersController extends Controller
 
         $result = $users->save();
 
-        if ($req->user_type = 'Student') {
+        if ($req->user_type == 'Student') {
             $student = new student;
             $student->userID = $userID;
             $student->save();
-        } elseif ($req->user_type = 'Supervisor') {
+        } elseif ($req->user_type == 'Supervisor') {
             $supervisor = new supervisor;
             $supervisor->userID = $userID;
             $supervisor->save();
@@ -157,9 +157,9 @@ class UsersController extends Controller
         Session::put('logged_user', $userID);   //put the data and in session
         Session::put('name', $name);
 
-        if ($user_type = 'Student') {
+        if ($user_type == 'Student') {
             return redirect('home');
-        } elseif ($user_type = 'Supervisor') {
+        } elseif ($user_type == 'Supervisor') {
             return redirect('supervisorprofile');
         }
 

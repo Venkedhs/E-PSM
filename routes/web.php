@@ -23,9 +23,9 @@ Route::get('/', function () {
         return view('welcome');
     } else {
 
-        if ($user_type = 'Student') {
+        if ($user_type == 'Student') {
             return redirect('home');
-        } elseif ($user_type = 'Supervisor') {
+        } elseif ($user_type == 'Supervisor') {
             return redirect('supervisorprofile');
         }
     }
@@ -70,7 +70,7 @@ Route::post('update_profile', 'supervisorController@updateprofile');
 use App\Http\Controllers\MeetingController;
 
 Route::get('AddMeetingBooking', [MeetingController::class, 'addMeetingBooking']); //student add meeting booking
-Route::get('ViewMeetingBooking', [MeetingController::class, 'viewMeetingBooking']); //student view meeting 
+Route::get('ViewMeetingBooking', [MeetingController::class, 'viewMeetingBooking']); //student view meeting
 Route::get('EditMeetingBooking', [MeetingController::class, 'editMeetingBooking']); //student edit meetig booking
 Route::get('RetriveMeeting', [MeetingController::class, 'retriveMeeting']); //sv view meeting list detail
 Route::get('AddMeetingStatus', [MeetingController::class, 'addMeetingStatus']); //sv add meeting status

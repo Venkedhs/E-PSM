@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\students as student;
+use App\Models\students as students;
 use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -52,7 +52,7 @@ class studentController extends Controller
         $users->email = $email;
         $users->save();
         //table students
-        $students = student::where('userID', '=', session()->get('logged_user'))->get()->first();
+        $students = students::where('userID', '=', session()->get('logged_user'))->get()->first();
         $students->faculty = $faculty;
         $students->course = $course;
         $students->sem_year = $sem_year;
