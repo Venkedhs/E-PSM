@@ -27,6 +27,8 @@ Route::get('/', function () {
             return redirect('home');
         } elseif ($user_type == 'Supervisor') {
             return redirect('supervisorprofile');
+        } elseif ($user_type == 'Technician') {
+            return redirect('technicianprofile');
         }
     }
 });
@@ -65,6 +67,18 @@ Route::get('supervisorprofile', [supervisorController::class, 'index']);
 Route::get('SVedit', [supervisorController::class, 'editprofile']);
 Route::post('update_profile', 'supervisorController@updateprofile');
 // url tak boleh sama tapi ada cara kalau nak pakai url sama
+
+use App\Http\Controllers\technicianController;
+
+Route::get('technicianprofile', [technicianController::class, 'index']);
+Route::get('TECHedit', [technicianController::class, 'editprofile']);
+Route::post('update_profile', 'technicianController@updateprofile');
+
+use App\Http\Controllers\coordinatorController;
+
+Route::get('coordinatorprofile', [coordinatorController::class, 'index']);
+Route::get('COedit', [coordinatorController::class, 'editprofile']);
+Route::post('update_profile', 'coordinatorController@updateprofile');
 
 //MeetingBooking
 use App\Http\Controllers\MeetingController;

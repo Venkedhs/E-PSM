@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Supervisor Profile</h1>
+                    <h1 class="m-0 text-dark">Coordinator Profile</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -31,33 +31,25 @@
                     </td>
                     <td width="20%">
                         <h2>Name</h2>
-                        <h2>Supervisor ID</h2>
+                        <h2>Coordinator ID</h2>
                         <h2>Faculty</h2>
-                        <h2>Expertise</h2>
                         <h2>Office</h2>
                         <h2>Phone Number</h2>
                         <h2>Email</h2>
-                        <h2>Student Name</h2>
                     </td>
                     <td width="50%">
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->name}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->userID}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->faculty}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->expertise}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->office}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->phone}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->email}}</h3>
-                        @if(empty($supervisors[0]->std_name))
-                        <h3>:</h3>
-                        @else
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->std_name}}</h3>
-                        @endif
+                        <h3>:&nbsp&nbsp{{$coordinators[0]->name}}</h3>
+                        <h3>:&nbsp&nbsp{{$coordinators[0]->userID}}</h3>
+                        <h3>:&nbsp&nbsp{{$coordinators[0]->faculty}}</h3>
+                        <h3>:&nbsp&nbsp{{$coordinators[0]->office}}</h3>
+                        <h3>:&nbsp&nbsp{{$coordinators[0]->phone}}</h3>
+                        <h3>:&nbsp&nbsp{{$coordinators[0]->email}}</h3>
                     </td>
                 </tr>
             </table>
             <h2><br></h2>
             <h2><br></h2>
-            <a class="button-73" role="button" href="SVedit">Edit Profile</a>
+            <a class="button-73" role="button" href="COedit">Edit Profile</a>
             <h2><br></h2>
         </div><!-- /.container -->
     </div>

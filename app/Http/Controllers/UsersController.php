@@ -7,8 +7,10 @@ use Session;
 use Validator;
 use Exception;
 use App\Models\users as users;
-use App\Models\students as student;
-use App\Models\supervisors as supervisor;
+use App\Models\students as students;
+use App\Models\supervisors as supervisors;
+use App\Models\technicians as technicians;
+use App\Models\coordinators as coordinators;
 
 
 class UsersController extends Controller
@@ -54,16 +56,11 @@ class UsersController extends Controller
                     return redirect('home');
                 } elseif ($user_type == 'Supervisor') {
                     return redirect('supervisorprofile');
+                } elseif ($user_type == 'Technician') {
+                    return redirect('technicianprofile');
+                } elseif ($user_type = 'Coordinator') {
+                    return redirect('coordinatorprofile');
                 }
-                // elseif($user_type='Coordinator')
-                // {
-                //     return redirect('coordinatorprofile');
-                // }
-                // elseif($user_type='Technician')
-                // {
-                //     return redirect('technicianprofile');
-                // }
-
             } else {
 
                 // custom back validator message
@@ -90,7 +87,6 @@ class UsersController extends Controller
 
     function register(Request $req)
     {
-
 
         // validation
         $messages = [
@@ -135,13 +131,21 @@ class UsersController extends Controller
         $result = $users->save();
 
         if ($req->user_type == 'Student') {
-            $student = new student;
-            $student->userID = $userID;
-            $student->save();
+            $students = new students;
+            $students->userID = $userID;
+            $students->save();
         } elseif ($req->user_type == 'Supervisor') {
-            $supervisor = new supervisor;
-            $supervisor->userID = $userID;
-            $supervisor->save();
+            $supervisors = new supervisors;
+            $supervisors->userID = $userID;
+            $supervisors->save();
+        } elseif ($req->user_type == 'Technician') {
+            $technicians = new technicians;
+            $technicians->userID = $userID;
+            $technicians->save();
+        } elseif ($req->user_type == 'Coordinator') {
+            $coordinators = new coordinators;
+            $coordinators->userID = $userID;
+            $coordinators->save();
         }
         $details = [
             'type' => 'Registration',
@@ -161,6 +165,10 @@ class UsersController extends Controller
             return redirect('home');
         } elseif ($user_type == 'Supervisor') {
             return redirect('supervisorprofile');
+        } elseif ($user_type == 'Technician') {
+            return redirect('technicianprofile');
+        } elseif ($user_type == 'Coordinator') {
+            return redirect('coordinatorprofile');
         }
 
         // try {
