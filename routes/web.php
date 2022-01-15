@@ -69,7 +69,11 @@ Route::post('update_profile', 'supervisorController@updateprofile');
 //MeetingBooking
 use App\Http\Controllers\MeetingController;
 
-Route::get('AddMeetingBooking', [MeetingController::class, 'addMeetingBooking']);
+Route::get('AddMeetingBooking', [MeetingController::class, 'addMeetingBooking']); //student add meeting booking
+Route::get('ViewMeetingBooking', [MeetingController::class, 'viewMeetingBooking']); //student view meeting 
+Route::get('EditMeetingBooking', [MeetingController::class, 'editMeetingBooking']); //student edit meetig booking
+Route::get('RetriveMeeting', [MeetingController::class, 'retriveMeeting']); //sv view meeting list detail
+Route::get('AddMeetingStatus', [MeetingController::class, 'addMeetingStatus']); //sv add meeting status
 
 //Logbook
 use App\Http\Controllers\LogbookController;
