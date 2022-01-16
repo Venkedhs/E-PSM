@@ -33,7 +33,7 @@ $roles = session()->get('user_type');
     <!-- Main content -->
     <div class="content">
         <div class="container">
-            <form action="update_profile" method="post">
+            <form action="CO_update" method="post">
                 {{ csrf_field() }}
                 <table style="width:100%">
                     <tr>

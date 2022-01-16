@@ -63,26 +63,26 @@ use App\Http\Controllers\studentController;
 
 Route::get('studentprofile', [studentController::class, 'index']);
 Route::get('STDedit', [studentController::class, 'editprofile']);
-Route::post('update_profile', 'studentController@updateprofile');
+Route::post('STD_update', 'studentController@updateprofile');
 
 use App\Http\Controllers\supervisorController;
 
 Route::get('supervisorprofile', [supervisorController::class, 'index']);
 Route::get('SVedit', [supervisorController::class, 'editprofile']);
-Route::post('update_profile', 'supervisorController@updateprofile');
+Route::post('SV_update', 'supervisorController@update_profile');
 // url tak boleh sama tapi ada cara kalau nak pakai url sama
 
 use App\Http\Controllers\technicianController;
 
 Route::get('technicianprofile', [technicianController::class, 'index']);
 Route::get('TECHedit', [technicianController::class, 'editprofile']);
-Route::post('update_profile', 'technicianController@updateprofile');
+Route::post('TECH_update', 'technicianController@update_profile');
 
 use App\Http\Controllers\coordinatorController;
 
 Route::get('coordinatorprofile', [coordinatorController::class, 'index']);
 Route::get('COedit', [coordinatorController::class, 'editprofile']);
-Route::post('update_profile', 'coordinatorController@updateprofile');
+Route::post('CO_update', 'coordinatorController@update_profile');
 
 //MeetingBooking
 use App\Http\Controllers\MeetingController;
