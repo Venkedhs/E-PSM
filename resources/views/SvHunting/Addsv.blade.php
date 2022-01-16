@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -8,7 +9,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Coordinator Profile</h1>
+          <h1 class="m-0 text-dark">Coordinator Page </h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -29,9 +30,9 @@
          	<center>
 			 <h1 style="text-align: center;">ADD SV FORM</h1>
         </br>
-		<button <a href="">Add Meeting Booking</a></button>
-        <button <a href="" target="_blank">View Meeting Booking </a></button>
-        <button <a href="" target="_blank">Edit Meeting Booking </a></button>
+		<button <a href="">Add supervisor</a></button>
+        <button <a href="" target="_blank">View Supervisor list </a></button>
+        <button <a href="" target="_blank">delete supervisor list </a></button>
 
   </center>
 	<center><fieldset>
@@ -120,19 +121,6 @@
 				</td>
 				</tr>
 
-				
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for="Meeting_Purpose">Meeting purpose:</label>
-					</td>
-					<td>
-					<input type="text" name="Meeting_purpose" id="Meeting_Purpose">
-					</td>
-					</p>
-				</td>
-				</tr>
 			</table>
 			<center>
 			<input type="submit" name="Submit" id="Submit" value="Submit" method="post">
