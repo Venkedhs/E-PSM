@@ -93,6 +93,8 @@ Route::get('EditMeetingBooking', [MeetingController::class, 'editMeetingBooking'
 Route::get('RetriveMeeting', [MeetingController::class, 'retriveMeeting']); //sv view meeting list detail
 Route::get('AddMeetingStatus', [MeetingController::class, 'addMeetingStatus']); //sv add meeting status
 
+Route::post('AddMeetingBooking', 'MeetingController@addMeetingBooking');
+
 //Logbook
 use App\Http\Controllers\LogbookController;
 

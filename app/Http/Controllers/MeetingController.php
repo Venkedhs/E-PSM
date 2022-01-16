@@ -9,8 +9,9 @@ class MeetingController extends Controller
 {
     //create function to read from form 
 
-    function addMeetingBooking() //student add meeting booking
+    function addMeetingBooking(Request $var) //student add meeting booking
     {
+        print_r($var->input());
         // $var = new Meeting;
         // $var->SV_ID = $req->SV_id;
         // $var->STD_ID = $req->STD_id;

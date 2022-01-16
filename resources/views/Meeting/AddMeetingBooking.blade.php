@@ -46,7 +46,7 @@
 					<label for="id">Student ID:</label>
 					</td>
 					<td>
-					<input type="text" name="STD_id" id="STD_ID">
+					<input type="text" name="userID" id="STD_ID">
 					<td>
 					</p>
 				</td>
