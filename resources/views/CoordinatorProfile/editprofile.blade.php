@@ -1,3 +1,13 @@
+<?php
+
+$logged_user = session()->get('logged_user');
+$user_name = session()->get('name');
+$roles = session()->get('user_type');
+
+// $all = session()->all();
+
+// var_dump($all);
+?>
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -27,7 +37,7 @@
                 {{ csrf_field() }}
                 <table style="width:100%">
                     <tr>
-                        <td width="30%" class="topleft"><img src="./images/profileIcon.jpg" width="200" height="180">
+                        <td width="30%" class="topleft"><img src="https://avatars.dicebear.com/api/initials/:{{$user_name}}.svg" width="200" height="180">
                             <h2><br></h2>
                             <h4>PSM Title:</h4>
                         </td>

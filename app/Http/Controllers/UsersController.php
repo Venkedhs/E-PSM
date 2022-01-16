@@ -52,15 +52,17 @@ class UsersController extends Controller
                 Session::put('logged_user', $userID);   //put the data and in session
                 Session::put('name', $name);
 
-                if ($user_type == 'Student') {
-                    return redirect('studentprofile');
-                } elseif ($user_type == 'Supervisor') {
-                    return redirect('supervisorprofile');
-                } elseif ($user_type == 'Technician') {
-                    return redirect('technicianprofile');
-                } elseif ($user_type = 'Coordinator') {
-                    return redirect('coordinatorprofile');
-                }
+                // if ($user_type == 'Student') {
+                //     return redirect('studentprofile');
+                // } elseif ($user_type == 'Supervisor') {
+                //     return redirect('supervisorprofile');
+                // } elseif ($user_type == 'Technician') {
+                //     return redirect('technicianprofile');
+                // } elseif ($user_type = 'Coordinator') {
+                //     return redirect('coordinatorprofile');
+                // }
+                return redirect('home');
+
             } else {
 
                 // custom back validator message

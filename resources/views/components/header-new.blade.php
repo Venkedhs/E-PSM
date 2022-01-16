@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<aside class="main-sidebar sidebar-light-purple elevation-2">
 			<!-- Brand Logo -->
 			<a class="brand-link" style="text-align: center;">
-				<img class="w-50 h-auto" src="./images/ump_logo.png" alt="UiTM" />
+				<img class="w-50 h-auto" src="./images/ump_logo.png" alt="UMP" />
 			</a>
 
 			<!-- Sidebar -->
@@ -70,7 +70,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<!-- Sidebar user panel (optional) -->
 				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
 					<div class="image">
-						<img class="w-10 h-auto rounded-circle" src="https://avatars.dicebear.com/api/initials/:{{$user_name}}.svg" alt="UiTM" />
+						<img class="w-10 h-auto rounded-circle" src="https://avatars.dicebear.com/api/initials/:{{$user_name}}.svg" alt="UMP" />
 					</div>
 					<div class="info">
 
@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
 						<li class="nav-item">
-							<a href="laporan" class="nav-link  @if(url()->current() ===  URL::to('/laporan'))
+							<a href="home" class="nav-link  @if(url()->current() ===  URL::to('/home'))
 								active
 						   @endif">
 								<i class="nav-icon far far fa-edit"></i>
@@ -94,7 +94,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="home" class="nav-link  @if(url()->current() ===  URL::to('/studentprofile'))
+							<a href="studentprofile" class="nav-link  @if(url()->current() ===  URL::to('/studentprofile'))
 								active
 						   @endif">
 								<i class="nav-icon fas fa-th"></i>
@@ -177,7 +177,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
 						<li class="nav-item">
-							<a href="laporan" class="nav-link  @if(url()->current() ===  URL::to('/laporan'))
+							<a href="home" class="nav-link  @if(url()->current() ===  URL::to('/home'))
 								active
 						   @endif">
 								<i class="nav-icon far far fa-edit"></i>
@@ -269,7 +269,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
 						<li class="nav-item">
-							<a href="laporan" class="nav-link  @if(url()->current() ===  URL::to('/laporan'))
+							<a href="home" class="nav-link  @if(url()->current() ===  URL::to('/home'))
 								active
 						   @endif">
 								<i class="nav-icon far far fa-edit"></i>
@@ -361,7 +361,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
 						<li class="nav-item">
-							<a href="laporan" class="nav-link  @if(url()->current() ===  URL::to('/laporan'))
+							<a href="home" class="nav-link  @if(url()->current() ===  URL::to('/home'))
 								active
 						   @endif">
 								<i class="nav-icon far far fa-edit"></i>

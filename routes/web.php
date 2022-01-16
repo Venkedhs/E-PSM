@@ -24,13 +24,17 @@ Route::get('/', function () {
     } else {
 
         if ($user_type == 'Student') {
-            return redirect('home');
+            return redirect('studentprofile');
         } elseif ($user_type == 'Supervisor') {
             return redirect('supervisorprofile');
         } elseif ($user_type == 'Technician') {
             return redirect('technicianprofile');
         }
     }
+});
+
+Route::get('/home', function () {
+    return view('homepage');
 });
 
 Route::view('register', 'register');
