@@ -41,55 +41,88 @@
 				<form action="AddMeetingBooking" method="POST" name="meetingForm"  >
                 @csrf
 				<center>
-				<td><td>
+
+				<td>
+					<td>
 					<p>
 					<td>
-					<label for="id">Student ID:</label>
+					<label for="id">Coordinator ID:</label>
 					</td>
 					<td>
-					<input type="text" name="STD_id" id="STD_ID">
+					<input type="text" name="CO_id" id="CO_ID">
 					<td>
 					</p>
 				</td>
-                </tr>
+        </tr>
 				
-				<td><td>
+				<td>
+					<td>
 					<p>
 					<td>
-					<label for=Meeting_Date>Meeting Date:</label>
+					<label for=SvName>SvName</label>
 					</td>
 					<td>
-					<input type="date" name="Meeting_date" id="Meeting_Date">
+					<input type="text" name="SvName" id="SvName">
+					</td>
+					</p>
+				</td>
+				</tr>
+				
+				<td>
+					<td>
+					<p>
+					<td>
+					<label for=SvExpertise>SvExpertise</label>
+					</td>
+					<td>
+					<input type="text" name="SvExpertise" id="SvExpertise">
 					</td>
 					</p>
 				</td>
 				</tr>
 
-				<td><td>
+				<td>
+					<td>
 					<p>
 					<td>
-					<label for=Meeting_Start>Start Time:</label>
+					<label for=SvExperience>SvExperience</label>
 					</td>
 					<td>
-					<input type="time" name="Meeting_start" id="Meeting_Start">
+					<input type="text" name="SvExperience" id="SvExperience">
 					</td>
 					</p>
 				</td>
 				</tr>
 
-				<td><td>
+				<td>
+					<td>
 					<p>
 					<td>
-					<label for=Meeting_End>End Time:</label>
+					<label for=SvContactNo>SvContactNo</label>
 					</td>
 					<td>
-					<input type="time" name="Meeting_end" id="Meeting_End">
+					<input type="text" name="SvContactNo" id="SvContactNo">
 					</td>
 					</p>
 				</td>
 				</tr>
 
-				<td><td>
+				<td>
+					<td>
+					<p>
+					<td>
+					<label for=SvEmail>SvEmail</label>
+					</td>
+					<td>
+					<input type="text" name="SvEmail" id="SvEmail">
+					</td>
+					</p>
+				</td>
+				</tr>
+
+				
+				<td>
+					<td>
 					<p>
 					<td>
 					<label for="Meeting_Purpose">Meeting purpose:</label>
