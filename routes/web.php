@@ -57,7 +57,7 @@ Route::get('/logout', 'UsersController@logout');
 //Profile
 use App\Http\Controllers\studentController;
 
-Route::get('home', [studentController::class, 'index']);
+Route::get('studentprofile', [studentController::class, 'index']);
 Route::get('STDedit', [studentController::class, 'editprofile']);
 Route::post('update_profile', 'studentController@updateprofile');
 

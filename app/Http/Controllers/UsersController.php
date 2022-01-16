@@ -53,7 +53,7 @@ class UsersController extends Controller
                 Session::put('name', $name);
 
                 if ($user_type == 'Student') {
-                    return redirect('home');
+                    return redirect('studentprofile');
                 } elseif ($user_type == 'Supervisor') {
                     return redirect('supervisorprofile');
                 } elseif ($user_type == 'Technician') {
@@ -154,22 +154,7 @@ class UsersController extends Controller
 
         $data['details'] = $details;
 
-        $user_type = $req->user_type;
-        $userID = $req->userID;
-        $name = $req->name;
-        Session::put('user_type', $user_type);
-        Session::put('logged_user', $userID);   //put the data and in session
-        Session::put('name', $name);
-
-        if ($user_type == 'Student') {
-            return redirect('home');
-        } elseif ($user_type == 'Supervisor') {
-            return redirect('supervisorprofile');
-        } elseif ($user_type == 'Technician') {
-            return redirect('technicianprofile');
-        } elseif ($user_type == 'Coordinator') {
-            return redirect('coordinatorprofile');
-        }
+        return redirect('/');
 
         // try {
 
@@ -202,14 +187,14 @@ class UsersController extends Controller
     {
         // validation
         $messages = [
-            'required' => 'diperlukan',
-            'between' => 'harus diantara :min - :max aksara',
-            'min' => 'minimum :min aksara',
-            'confirmed' => 'kata laluan tidak sepadan'
+            'required' => 'required',
+            'between' => 'must :min - :max letter',
+            'min' => 'minimum :min letter',
+            'confirmed' => 'Password did not match'
         ];
 
         $rules = [
-            'studentID' => 'required',
+            'userID' => 'required',
             'password' => 'required | between:8,10 | confirmed',
             'password_confirmation' => 'required',
         ];
@@ -223,25 +208,25 @@ class UsersController extends Controller
         $data['purpose'] = 'Reset Password';
 
         // Select eloquent
-        $check = students::where('studentID', $req->studentID)->exists();
+        $check = users::where('userID', $req->userID)->exists();
 
         if ($check) {
 
-            $students = students::where('studentID', $req->studentID)
+            $users = users::where('userID', $req->userID)
                 ->get()
                 ->first();
 
-            $students->password = encrypt($req->password);
-            $students->save();
+            $users->password = ($req->password);
+            $users->save();
 
             $custom_msg = [
-                'success' => 'Password berjaya ditukar',
+                'success' => 'Password successfully changed',
             ];
 
             return redirect()->back()->withInput()->withErrors($custom_msg);
         } else {
             $custom_msg = [
-                'staff_id' => 'staff id tidak berdaftar',
+                'staff_id' => 'User ID did not registered',
             ];
 
             return redirect()->back()->withInput()->withErrors($custom_msg);

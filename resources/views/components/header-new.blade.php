@@ -2,6 +2,7 @@
 
 $logged_user = session()->get('logged_user');
 $user_name = session()->get('name');
+$roles = session()->get('user_type');
 
 // $all = session()->all();
 
@@ -77,6 +78,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					</div>
 				</div>
 
+                @if($roles == 'Student')
 				<!-- Sidebar Menu -->
 				<nav class="mt-2">
 					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -92,7 +94,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="home" class="nav-link  @if(url()->current() ===  URL::to('/home'))
+							<a href="home" class="nav-link  @if(url()->current() ===  URL::to('/studentprofile'))
 								active
 						   @endif">
 								<i class="nav-icon fas fa-th"></i>
@@ -170,6 +172,283 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					</ul>
 				</nav>
 				<!-- /.sidebar-menu -->
+                @elseif($roles == 'Supervisor')
+                <nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+						<li class="nav-item">
+							<a href="laporan" class="nav-link  @if(url()->current() ===  URL::to('/laporan'))
+								active
+						   @endif">
+								<i class="nav-icon far far fa-edit"></i>
+								<p>
+									Homepage
+								</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="supervisorprofile" class="nav-link  @if(url()->current() ===  URL::to('/supervisorprofile'))
+								active
+						   @endif">
+								<i class="nav-icon fas fa-th"></i>
+								<p>
+									Profile
+								</p>
+							</a>
+						</li>
+
+						<li class="nav-item has-treeview">
+							<a href="#" class="nav-link @if(url()->current() ===  URL::to('/mohon' ) or url()->current() ===  URL::to('mohon_two') or  url()->current() ===  URL::to('mohon_three') or  url()->current() ===  URL::to('mohon_tajaan')  or  url()->current() ===  URL::to('mohon_impak')  )
+								active
+						   @endif">
+								<i class="nav-icon far far fa-edit"></i>
+								<p>
+									PSM Title and Activity
+									<i class="right fas fa-angle-left"></i>
+								</p>
+							</a>
+
+							<ul class="nav nav-treeview  ">
+								<li class="nav-item ">
+									<a href="javascript:;" class="nav-link disabled">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>1.0 Hunting Supervisor</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="javascript:;" class="nav-link disabled">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>2.0 Proposal</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="javascript:;" class="nav-link disabled">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>3.0 Title selection</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="LogbookStudent" class="nav-link  @if(url()->current() ===  URL::to('/LogbookStudent'))
+								active
+						   @endif">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>4.0 Logbook</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="AddMeetingBooking" class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingBooking'))
+								active
+						   @endif">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>5.0 Meeting</p>
+									</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li class="nav-item">
+							<a href="semak" class="nav-link @if(url()->current() ===  URL::to('/inventory'))
+								active
+						   @endif
+						  ">
+								<i class="nav-icon far far fa-edit"></i>
+								<p>
+									Inventory
+								</p>
+							</a>
+						</li>
+					</ul>
+				</nav>
+                @elseif($roles == 'Technician')
+                <nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+						<li class="nav-item">
+							<a href="laporan" class="nav-link  @if(url()->current() ===  URL::to('/laporan'))
+								active
+						   @endif">
+								<i class="nav-icon far far fa-edit"></i>
+								<p>
+									Homepage
+								</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="technicianprofile" class="nav-link  @if(url()->current() ===  URL::to('/technicianprofile'))
+								active
+						   @endif">
+								<i class="nav-icon fas fa-th"></i>
+								<p>
+									Profile
+								</p>
+							</a>
+						</li>
+
+						<li class="nav-item has-treeview">
+							<a href="#" class="nav-link @if(url()->current() ===  URL::to('/mohon' ) or url()->current() ===  URL::to('mohon_two') or  url()->current() ===  URL::to('mohon_three') or  url()->current() ===  URL::to('mohon_tajaan')  or  url()->current() ===  URL::to('mohon_impak')  )
+								active
+						   @endif">
+								<i class="nav-icon far far fa-edit"></i>
+								<p>
+									PSM Title and Activity
+									<i class="right fas fa-angle-left"></i>
+								</p>
+							</a>
+
+							<ul class="nav nav-treeview  ">
+								<li class="nav-item ">
+									<a href="javascript:;" class="nav-link disabled">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>1.0 Hunting Supervisor</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="javascript:;" class="nav-link disabled">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>2.0 Proposal</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="javascript:;" class="nav-link disabled">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>3.0 Title selection</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="LogbookStudent" class="nav-link  @if(url()->current() ===  URL::to('/LogbookStudent'))
+								active
+						   @endif">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>4.0 Logbook</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="AddMeetingBooking" class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingBooking'))
+								active
+						   @endif">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>5.0 Meeting</p>
+									</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li class="nav-item">
+							<a href="semak" class="nav-link @if(url()->current() ===  URL::to('/inventory'))
+								active
+						   @endif
+						  ">
+								<i class="nav-icon far far fa-edit"></i>
+								<p>
+									Inventory
+								</p>
+							</a>
+						</li>
+					</ul>
+				</nav>
+                @elseif($roles == 'Coordinator')
+                <nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+						<li class="nav-item">
+							<a href="laporan" class="nav-link  @if(url()->current() ===  URL::to('/laporan'))
+								active
+						   @endif">
+								<i class="nav-icon far far fa-edit"></i>
+								<p>
+									Homepage
+								</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="coordinatorprofile" class="nav-link  @if(url()->current() ===  URL::to('/coordinatorprofile'))
+								active
+						   @endif">
+								<i class="nav-icon fas fa-th"></i>
+								<p>
+									Profile
+								</p>
+							</a>
+						</li>
+
+						<li class="nav-item has-treeview">
+							<a href="#" class="nav-link @if(url()->current() ===  URL::to('/mohon' ) or url()->current() ===  URL::to('mohon_two') or  url()->current() ===  URL::to('mohon_three') or  url()->current() ===  URL::to('mohon_tajaan')  or  url()->current() ===  URL::to('mohon_impak')  )
+								active
+						   @endif">
+								<i class="nav-icon far far fa-edit"></i>
+								<p>
+									PSM Title and Activity
+									<i class="right fas fa-angle-left"></i>
+								</p>
+							</a>
+
+							<ul class="nav nav-treeview  ">
+								<li class="nav-item ">
+									<a href="javascript:;" class="nav-link disabled">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>1.0 Hunting Supervisor</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="javascript:;" class="nav-link disabled">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>2.0 Proposal</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="javascript:;" class="nav-link disabled">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>3.0 Title selection</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="LogbookStudent" class="nav-link  @if(url()->current() ===  URL::to('/LogbookStudent'))
+								active
+						   @endif">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>4.0 Logbook</p>
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a href="AddMeetingBooking" class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingBooking'))
+								active
+						   @endif">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>5.0 Meeting</p>
+									</a>
+								</li>
+							</ul>
+
+						</li>
+
+						<li class="nav-item">
+							<a href="semak" class="nav-link @if(url()->current() ===  URL::to('/inventory'))
+								active
+						   @endif
+						  ">
+								<i class="nav-icon far far fa-edit"></i>
+								<p>
+									Inventory
+								</p>
+							</a>
+						</li>
+					</ul>
+				</nav>
+                @endif
 			</div>
 			<!-- /.sidebar -->
 		</aside>

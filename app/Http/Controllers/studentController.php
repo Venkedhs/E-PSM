@@ -58,7 +58,7 @@ class studentController extends Controller
         $students->sem_year = $sem_year;
         $students->address = $address;
         $students->save();
-        return redirect("home");
+        return redirect("studentprofile");
     }
 
     /**

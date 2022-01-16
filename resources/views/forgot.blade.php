@@ -5,18 +5,18 @@
 		<div class="col-lg-3">
 		</div>
 		<div class="col-lg-6" style="text-align: center;">
-			<h3>UBAH KATA LALUAN</h3>
+			<h3>CHANGE PASSWORD</h3>
 			<hr/>
-			
+
 			<br>
 			<form action="user_reset" method="post">
 
 				<div class="row form-group" style="padding-right: 20px;">
 					<div class="col-lg-4 col-md-4 tablet" style="text-align: left; margin-top: 10px;">
-						<label for="email">Staff ID</label>
+						<label for="userID">User ID</label>
 					</div>
 					<div class="col-lg-8 col-md-8">
-						<input type="text" class="form-control input_style" name="staff_id" placeholder="2010641052" value="{{old('staff_id')}}">
+						<input type="text" class="form-control input_style" name="userID" placeholder="2010641052" value="{{old('userID')}}">
 
 						@error('staff_id')
 							<span style="float: right;color: red">{{$message}}</span>
@@ -26,7 +26,7 @@
 
 				<div class="row form-group" style="padding-right: 20px;">
 					<div class="col-lg-4 col-md-4 tablet" style="text-align: left; margin-top: 10px;">
-						<label for="password">Kata laluan baharu</label>
+						<label for="password">New Password</label>
 					</div>
 					<div class="col-lg-8 col-md-8">
 						<input type="password" class="form-control input_style" name="password" placeholder="Abc123">
@@ -38,7 +38,7 @@
 
 				<div class="row form-group" style="padding-right: 20px;">
 					<div class="col-lg-4 col-md-4 tablet" style="text-align: left;">
-						<label for="password_confirmation">Sahkan Kata laluan</label>
+						<label for="password_confirmation">Password Confirmation</label>
 					</div>
 					<div class="col-lg-8 col-md-8">
 						<input type="password" class="form-control input_style" name="password_confirmation" placeholder="Abc123">
@@ -56,12 +56,12 @@
 
 				<br>
 				<div style="text-align: right; padding-right: 20px;">
-					<button type="submit" class="btn btn-dark btn-lg btn-block">Daftar</button>
+					<button type="submit" class="btn btn-dark btn-lg btn-block">Register</button>
 				</div>
 
 				<br>
 				<br>
-                
+
             </form>
 		</div>
 		<div class="col-lg-3">
