@@ -22,18 +22,18 @@ class SvHuntingController extends Controller
         return View('SvHunting.viewSvList');
     }
 
-    function ViewApplicationStatus() //student view supervisor application status
+    function viewApplicationStatus() //student view supervisor application status
     {
         return View('SvHunting.ViewApplicationStatus');
     }
 
-    function Addsv(Request $var) //Coordinator add supervisor
+    function addsv(Request $var) //Coordinator add supervisor
     {
         print_r($var->input());
         
         return View('SvHunting.Addsv');
     }
-    function ApplySV(Request $var) //student add supervisor
+    function applySV(Request $var) //student add supervisor
     {
         print_r($var->input());
         
