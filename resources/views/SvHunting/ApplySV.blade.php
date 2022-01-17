@@ -4,8 +4,13 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
-	
-
+<style>
+	table.center{
+		margin-left :auto;
+		margin-right :auto;
+	}
+	}
+</style>
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
@@ -40,7 +45,7 @@
 	<center><fieldset>
 		     <br>
 
-			<table>
+			<table class="center">
 				<form action="ApplySV" method="POST" name="ApplicationForm"  >
                 @csrf
 				<center>
