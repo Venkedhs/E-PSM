@@ -1,3 +1,13 @@
+<?php
+
+$logged_user = session()->get('logged_user');
+$user_name = session()->get('name');
+$roles = session()->get('user_type');
+
+// $all = session()->all();
+
+// var_dump($all);
+?>
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -66,7 +76,19 @@
 				<th>Purpose</th>
 				<th>Status</th>
 				<th>Comment</th>	
-			</tr>
+			</tr> 
+      @foreach ($meetings as $data)
+   <tr>
+            <td>:&nbsp&nbsp{{$data->userID}}</td>
+            <td>:&nbsp&nbsp{{$data->Meeting_Date}}</td>
+            <td>:&nbsp&nbsp{{$data->Meeting_Start}}</td>
+            <td>:&nbsp&nbsp{{$data->Meeting_End}}</td>
+            <td>:&nbsp&nbsp{{$data->Meeting_Purpose}}</td>
+
+    </tr>
+     @endforeach
+      
+        
 
 		</table></center>
   <!-- /.content -->

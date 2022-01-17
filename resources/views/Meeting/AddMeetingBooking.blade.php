@@ -1,3 +1,13 @@
+<?php
+
+$logged_user = session()->get('logged_user');
+$user_name = session()->get('name');
+$roles = session()->get('user_type');
+
+// $all = session()->all();
+
+// var_dump($all);
+?>
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -28,29 +38,20 @@
          	<center>
 			 <h1 style="text-align: center;">MEETING BOOKING FORM</h1>
         </br>
-		<button <a href="">Add Meeting Booking</a></button>
-        <button <a href="" target="_blank">View Meeting Booking </a></button>
-        <button <a href="" target="_blank">Edit Meeting Booking </a></button>
+		<button <a href="AddMeetingBooking">Add Meeting Booking</a></button>
+        <button <a href="ViewMeetingBooking">View Meeting Booking </a></button>
+        <button <a href="EditMeetingBooking" target="_blank">Edit Meeting Booking </a></button>
+
+		<a class="button-73" role="button" href="STDedit">Edit Profile</a>
 
   </center>
 	<center><fieldset>
 		     <br>
 
 			<table>
-				<form action="AddMeetingBooking" method="POST" name="meetingForm"  >
+				<form action="MeetingBooking" method="POST" >
                 @csrf
 				<center>
-				<td><td>
-					<p>
-					<td>
-					<label for="id">Student ID:</label>
-					</td>
-					<td>
-					<input type="text" name="userID" id="STD_ID">
-					<td>
-					</p>
-				</td>
-                </tr>
 				
 				<td><td>
 					<p>
@@ -58,7 +59,7 @@
 					<label for=Meeting_Date>Meeting Date:</label>
 					</td>
 					<td>
-					<input type="date" name="Meeting_date" id="Meeting_Date">
+					<input type="date" name="Meeting_Date">
 					</td>
 					</p>
 				</td>
@@ -70,7 +71,7 @@
 					<label for=Meeting_Start>Start Time:</label>
 					</td>
 					<td>
-					<input type="time" name="Meeting_start" id="Meeting_Start">
+					<input type="time" name="Meeting_Start">
 					</td>
 					</p>
 				</td>
@@ -82,7 +83,7 @@
 					<label for=Meeting_End>End Time:</label>
 					</td>
 					<td>
-					<input type="time" name="Meeting_end" id="Meeting_End">
+					<input type="time" name="Meeting_End">
 					</td>
 					</p>
 				</td>
@@ -94,7 +95,7 @@
 					<label for="Meeting_Purpose">Meeting purpose:</label>
 					</td>
 					<td>
-					<input type="text" name="Meeting_purpose" id="Meeting_Purpose">
+					<input type="text" name="Meeting_Purpose"> 
 					</td>
 					</p>
 				</td>
