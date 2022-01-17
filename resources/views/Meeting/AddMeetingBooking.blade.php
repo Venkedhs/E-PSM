@@ -41,7 +41,10 @@ $roles = session()->get('user_type');
 		<button <a href="AddMeetingBooking">Add Meeting Booking</a></button>
         <button <a href="ViewMeetingBooking">View Meeting Booking </a></button>
         <button <a href="EditMeetingBooking" target="_blank">Edit Meeting Booking </a></button>
-
+		<button><a href="ViewMeetingBooking" >View Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/ViewMeetingBooking'))
+		active
+		@endif">
+		</a></button>
 		<a class="button-73" role="button" href="STDedit">Edit Profile</a>
 
   </center>
