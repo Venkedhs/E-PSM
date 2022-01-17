@@ -95,22 +95,19 @@ Route::get('RetriveMeeting', [MeetingController::class, 'retriveMeeting']); //sv
 Route::get('AddMeetingStatus', [MeetingController::class, 'addMeetingStatus']); //sv add meeting status
 
 Route::post('MeetingBooking', 'MeetingController@addMeetingBooking');
-Route::post('SVMeetingBooking', 'MeetingController@addMeetingStatus');
+//Route::post('SVMeetingBooking', 'MeetingController@addMeetingStatus');
+
 
 //Logbook
 use App\Http\Controllers\LogbookController;
 
 Route::get('LogbookStudent', [LogbookController::class, 'logbookview']);
-Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
-Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
-Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
 
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;
 
-Route::get('ViewSVList',[SvHuntingController::class, 'viewSVList']); //View sv list
+Route::get('ViewSvList',[SvHuntingController::class, 'viewSvList']); //View sv list
 Route::get('/search','SvHuntingController@search');
 Route::get('Addsv',[SvHuntingController::class, 'addsv']);
-//Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
+Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
 Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);
-Route::get('apply', [SVHuntingController::class, 'applySV']);
