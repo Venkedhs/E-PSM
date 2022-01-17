@@ -88,7 +88,7 @@ class studentController extends Controller
      * @param  \App\Models\students  $students
      * @return \Illuminate\Http\Response
      */
-    public function show(student $students)
+    public function show(students $students)
     {
         //
     }
@@ -99,7 +99,7 @@ class studentController extends Controller
      * @param  \App\Models\students  $students
      * @return \Illuminate\Http\Response
      */
-    public function edit(student $students)
+    public function edit(students $students)
     {
         //
     }
@@ -111,7 +111,7 @@ class studentController extends Controller
      * @param  \App\Models\students  $students
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, student $students)
+    public function update(Request $request, students $students)
     {
         //
     }
@@ -122,7 +122,7 @@ class studentController extends Controller
      * @param  \App\Models\students  $students
      * @return \Illuminate\Http\Response
      */
-    public function destroy(student $students)
+    public function destroy(students $students)
     {
         //
     }
