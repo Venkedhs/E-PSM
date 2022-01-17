@@ -4,25 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Proposal;
 use App\Models\Title;
-use App\Models\User;
+use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ManageProposalController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['auth']);
-    }
 
     public function viewAll()
     {
         $title = null;
         $user = Auth::user();
-        if ($user->hasRole('coordinator')) {
+        if ($user->user_type == 'coordinator') {
             $title = Title::with('proposal','student')->get();
 
-        } elseif ($user->hasRole('supervisor')) {
+        } elseif ($user->user_type == 'supervisor') {
             $title = Title::where('sv_id',$user->supervisor->sv_id)->with('proposal','student')->get();
 
         } else {

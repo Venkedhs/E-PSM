@@ -4,19 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Classes\Constants\ApprovalStatus;
 use App\Models\Proposal;
-use App\Models\Student;
+use App\Models\students;
 use App\Models\Title;
-use App\Models\User;
+use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ManageTitleController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware(['auth']);
-    }
 
     public function index()
     {
@@ -82,11 +78,10 @@ class ManageTitleController extends Controller
 
     public function book()
     {
-        $model = Student::where('std_id', Auth::id())->with('title')->first();
+        $model = students::where('userID', session()->get('logged_user'))->first();
         $book_status = !is_null($model->title);
-        $titles = Title::where('sv_id',$model->sv_id)->with(['supervisor','supervisor_detail'])->get();
+        $titles = Title::where('svID',$model->sv_id)->get();
         $count = 0;
-
         return view('ManageTitle.book', ['titles' => $titles, 'count' => $count, 'book_status' => $book_status]);
     }
 

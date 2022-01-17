@@ -27,7 +27,7 @@ class Title extends Model
 
     public function student()
     {
-        return $this->belongsTo(User::class,'std_id');
+        return $this->belongsTo(User::class,'id');
     }
 
     public function student_detail()

@@ -15,8 +15,8 @@ class CreateTitlesTable extends Migration
     {
         Schema::create('titles', function (Blueprint $table) {
             $table->id('title_id');
-            $table->unsignedBigInteger('std_id');
-            $table->unsignedBigInteger('sv_id');
+            $table->string('stdID');
+            $table->string('svID');
             $table->string('psm_title');
             $table->timestamps();
         });
