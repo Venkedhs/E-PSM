@@ -1,4 +1,18 @@
 <x-header-new />
+
+<style type="text/css">
+			            
+			  
+				table.center{
+				margin-left :auto;
+				margin-right :auto;
+				}
+
+		 	 }
+				
+			
+		 </style>
+		
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -20,39 +34,9 @@
   </div>
   <!-- /.content-header -->
  
-  <style>
-  .form-center form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-</style>
+  
   <!-- Main content -->
-  <style type="text/css">
-			<style>
-            
-			  table {
-			  font-family: arial, sans-serif;
-			  border-collapse: collapse;
-			  border: 1px solid black;
-			  width: 100%;}
-			  
-			  th {
-				border: 1px solid black;
-				border-collapse: collapse;
-				text-align: center;
-				padding: 6px;
-				background:#B2B2B2;
-				color: black;}
-
-				table.center{
-				margin-left :auto;
-				margin-right :auto;
-				}
-				
-			</style>
-		 </style>
+  
   <center>
 			 <h1 style="text-align: center;">SUPERVISOR LIST</h1>
         </br>

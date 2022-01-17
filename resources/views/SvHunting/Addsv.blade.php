@@ -1,6 +1,16 @@
 //this for coordinator add sv
 
 <x-header-new />
+
+<style>
+	
+	table.center{
+		margin-left :auto;
+		margin-right :auto;
+	}
+	
+</style>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 

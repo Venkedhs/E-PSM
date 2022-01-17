@@ -20,40 +20,15 @@
   </div>
   <!-- /.content-header -->
  
-  <style>
-  .form-center form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-</style>
+  
   <!-- Main content -->
-  <style type="text/css">
-			<style>
-            
-			  table {
-			  font-family: arial, sans-serif;
-			  border-collapse: collapse;
-			  border: 1px solid black;
-			  width: 100%;}
-			  
-			  th {
-				border: 1px solid black;
-				border-collapse: collapse;
-				text-align: center;
-				padding: 6px;
-				background:#B2B2B2;
-				color: black;}
-				
-			</style>
-		 </style>
+  
   <center>
 			 <h1 style="text-align: center;">Application LIST</h1>
         </br>
         <form class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}"></form>
         	<input class="form-control mr-sm-2" type="search" placeholder="SearchSupervisor" name="query">
-        <button <a href="">Add Supervisor</a></button>
+        <button <a href="{{ url('ApplySV')}}">Add Supervisor</a></button>
         <button <a href="" target="_blank">Delete Supervisor </a></button>
         		
   </center>
