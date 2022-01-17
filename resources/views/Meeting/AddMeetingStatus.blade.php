@@ -35,16 +35,16 @@
 		     <br>
 
 			<table>
-				<form action="AddMeetingBooking" method="POST" name="meetingForm"  >
+				<form action="SVMeetingBooking" method="POST"  >
                 @csrf
 				<center>
 				<td><td>
 					<p>
 					<td>
-					<label for="id">Student ID:</label>
+					<label for=UserID">Student ID:</label>
 					</td>
 					<td>
-					<input type="text" name="STD_id" id="STD_ID">
+					<input type="text" name="userID"> 
 					<td>
 					</p>
 				</td>
@@ -56,7 +56,7 @@
 					<label for="Meeting_Status">Meeting status:</label>
 					</td>
 					<td>
-					<input type="text" name="Meeting_Status" id="Meeting_Status">
+					<input type="text" name="Meeting_Status" >  
 					</td>
 					</p>
 				</td>
@@ -68,7 +68,7 @@
 					<label for="Meeting_Comment">Meeting Comment:</label>
 					</td>
 					<td>
-					<input type="text" name="Meeting_Comment" id="Meeting_Comment">
+					<input type="text" name="Meeting_Comment"> 
 					</td>
 					</p>
 				</td>

@@ -234,7 +234,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								</li>
 
 								<li class="nav-item">
-									<a href="AddMeetingBooking" class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingBooking'))
+									<a href="RetriveMeeting" class="nav-link  @if(url()->current() ===  URL::to('/RetriveMeeting'))
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>

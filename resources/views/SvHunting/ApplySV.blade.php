@@ -33,7 +33,7 @@
   <!-- Main content -->
   <div class="content">
     <div class="container">
-      <table style="width:100%">
+      <table style="width:100%"> 
         <tr>
          	<center>
 			 <h1 style="text-align: center;">Apply SV FORM</h1>
