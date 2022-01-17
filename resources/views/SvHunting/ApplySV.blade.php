@@ -4,12 +4,7 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
-	#form{
-		position:fixed;
-		top:50%;
-		left:50%;
-		width:250px;
-	}
+	
 
   <!-- Content Header (Page header) -->
   <div class="content-header">
