@@ -4,6 +4,14 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
+<style>
+	table.center{
+		margin-left :auto;
+		margin-right :auto;
+	}
+	
+</style>
+
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
@@ -30,16 +38,16 @@
          	<center>
 			 <h1 style="text-align: center;">Apply SV FORM</h1>
         </br>
-		<button <a href="">Apply supervisor</a></button>
-        <button <a href="" target="_blank">View Supervisor list </a></button>
+		<button <a href="{{ url('ApplySV')}}">Apply supervisor</a></button>
+        <button <a href="{{ url('ViewSVList')}}" target="_blank">View Supervisor list </a></button>
         <button <a href="" target="_blank">delete supervisor list </a></button>
 
   </center>
 	<center><fieldset>
 		     <br>
 
-			<table>
-				<form action="AddMeetingBooking" method="POST" name="meetingForm"  >
+			<table class="center">
+				<form action="ApplySV" method="POST" name="ApplicationForm"  >
                 @csrf
 				<center>
 
@@ -50,7 +58,7 @@
 					<label for="id">Student_ID:</label>
 					</td>
 					<td>
-					<input type="text" name="Student_ID" id="Student_ID">
+					<input type="text" name="STD_id" id="Student_ID">
 					<td>
 					</p>
 				</td>
@@ -60,10 +68,49 @@
 					<td>
 					<p>
 					<td>
-					<label for=SvName>Student_Name</label>
+					<label for=StudentName>Student_Name</label>
 					</td>
 					<td>
 					<input type="text" name="Student_Name" id="Student_Name">
+					</td>
+					</p>
+				</td>
+				</tr>
+
+				<td>
+					<td>
+					<p>
+					<td>
+					<label for=StudentEmail>StudentEmail</label>
+					</td>
+					<td>
+					<input type="text" name="StudentEmail" id="StudentEmail">
+					</td>
+					</p>
+				</td>
+				</tr>
+
+				<td>
+					<td>
+					<p>
+					<td>
+					<label for=StudentNo>Student No</label>
+					</td>
+					<td>
+					<input type="text" name="StudentNo" id="StudentNo">
+					</td>
+					</p>
+				</td>
+				</tr>
+
+				<td>
+					<td>
+					<p>
+					<td>
+					<label for=Course>Course</label>
+					</td>
+					<td>
+					<input type="text" name="Course" id="Course">
 					</td>
 					</p>
 				</td>
@@ -96,25 +143,13 @@
 				</td>
 				</tr>
 
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=StudentEmail>StudentEmail</label>
-					</td>
-					<td>
-					<input type="text" name="StudentEmail" id="StudentEmail">
-					</td>
-					</p>
-				</td>
-				</tr>
-
 				
+
 				<td>
 					<td>
 					<p>
 					<td>
-					<label for=SvExperience>Reason apply sv</label>
+					<label for=Reason>Reason apply sv</label>
 					</td>
 					<td>
 					<input type="text" name="Reason" id="Reason">

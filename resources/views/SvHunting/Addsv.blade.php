@@ -1,6 +1,16 @@
 //this for coordinator add sv
 
 <x-header-new />
+
+<style>
+	
+	table.center{
+		margin-left :auto;
+		margin-right :auto;
+	}
+	
+</style>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -31,7 +41,8 @@
 			 <h1 style="text-align: center;">ADD SV FORM</h1>
         </br>
 		<button <a href="">Add supervisor</a></button>
-        <button <a href="" target="_blank">View Supervisor list </a></button>
+        <button <a href="{{ url('ViewSVList')}}" target="_blank">View Supervisor list </a></button>
+        <button <a href="{{ url('ViewApplicationStatus')}}">Add Supervisor</a></button>
         <button <a href="" target="_blank">delete supervisor list </a></button>
 
   </center>

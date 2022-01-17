@@ -14,6 +14,16 @@ class LogbookController extends Controller
 
     function logbookEdit()
     {
-        # code...
+        return View('Logbook.LogbookEdit');
+    }
+
+    function logbookAdd()
+    {
+        return View('Logbook.LogbookAdd');
+    }
+
+    function logbookDelete()
+    {
+        return View('Logbook.LogbookDelete');
     }
 }

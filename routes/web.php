@@ -99,11 +99,14 @@ Route::post('AddMeetingBooking', 'MeetingController@addMeetingBooking');
 use App\Http\Controllers\LogbookController;
 
 Route::get('LogbookStudent', [LogbookController::class, 'logbookview']);
+Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
+Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
+Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
 
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;
 
-Route::get('ViewSvList',[SvHuntingController::class, 'viewSvList']); //View sv list
+Route::get('ViewSVList',[SvHuntingController::class, 'viewSVList']); //View sv list
 Route::get('/search','SvHuntingController@search');
 Route::get('Addsv',[SvHuntingController::class, 'addsv']);
 Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
