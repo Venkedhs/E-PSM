@@ -38,8 +38,8 @@
          	<center>
 			 <h1 style="text-align: center;">Apply SV FORM</h1>
         </br>
-		<button <a href="">Apply supervisor</a></button>
-        <button <a href="" target="_blank">View Supervisor list </a></button>
+		<button <a href="{{ url('ApplySV')}}">Apply supervisor</a></button>
+        <button <a href="{{ url('ViewSVList')}}" target="_blank">View Supervisor list </a></button>
         <button <a href="" target="_blank">delete supervisor list </a></button>
 
   </center>

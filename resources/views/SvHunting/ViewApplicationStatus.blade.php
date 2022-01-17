@@ -29,6 +29,7 @@
         <form class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}"></form>
         	<input class="form-control mr-sm-2" type="search" placeholder="SearchSupervisor" name="query">
         <button <a href="{{ url('ApplySV')}}">Add Supervisor</a></button>
+        <button <a href="{{ url('ViewApplicationStatus')}}">Add Supervisor</a></button>
         <button <a href="" target="_blank">Delete Supervisor </a></button>
         		
   </center>
