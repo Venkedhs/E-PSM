@@ -103,4 +103,5 @@ Route::get('LogbookStudent', [LogbookController::class, 'logbookview']);
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;
 
-Route
+Route::get('ViewSvList'[SvHuntingController::class, 'ViewSvList']); //View sv list
+
