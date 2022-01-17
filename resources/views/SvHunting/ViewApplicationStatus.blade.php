@@ -49,7 +49,7 @@
 			</style>
 		 </style>
   <center>
-			 <h1 style="text-align: center;">SUPERVISOR LIST</h1>
+			 <h1 style="text-align: center;">Application LIST</h1>
         </br>
         <form class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}"></form>
         	<input class="form-control mr-sm-2" type="search" placeholder="SearchSupervisor" name="query">
@@ -63,6 +63,7 @@
 				<th>Supervisor ID</th>
 				<th>Supervisor Name</th>
 				<th>Expertse</th>
+				<th>Status</th>
 							</tr>
 
 		</table></center>
