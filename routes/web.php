@@ -109,5 +109,6 @@ use App\Http\Controllers\SvHuntingController;
 Route::get('ViewSVList',[SvHuntingController::class, 'viewSVList']); //View sv list
 Route::get('/search','SvHuntingController@search');
 Route::get('Addsv',[SvHuntingController::class, 'addsv']);
-Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
+//Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
 Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);
+Route::get('apply', [SVHuntingController::class, 'applySV']);

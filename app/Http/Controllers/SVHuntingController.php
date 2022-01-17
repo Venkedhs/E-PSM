@@ -29,13 +29,13 @@ class SvHuntingController extends Controller
 
     function addsv(Request $var) //Coordinator add supervisor
     {
-        print_r($var->input());
+       // print_r($var->input());
         
         return View('SvHunting.Addsv');
     }
     function applySV(Request $var) //student add supervisor
     {
-        print_r($var->input());
+        //print_r($var->input());
         
         return View('SvHunting.ApplySV');
     }
