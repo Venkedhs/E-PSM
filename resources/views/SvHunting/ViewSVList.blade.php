@@ -45,6 +45,11 @@
 				padding: 6px;
 				background:#B2B2B2;
 				color: black;}
+
+				table.center{
+				margin-left :auto;
+				margin-right :auto;
+				}
 				
 			</style>
 		 </style>
