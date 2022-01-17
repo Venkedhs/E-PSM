@@ -8,6 +8,14 @@ $roles = session()->get('user_type');
 
 // var_dump($all);
 ?>
+?>
+<style>
+	table.center{
+		margin-left :auto;
+		margin-right :auto;
+	}
+	}
+</style>
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -60,11 +68,19 @@ $roles = session()->get('user_type');
 		 </style>
   <center>
 			 <h1 style="text-align: center;">MEETING BOOKING LIST</h1>
-        </br>
-        <button <a href="">Add Meeting Booking</a></button>
-        <button <a href="" target="_blank">View Meeting Booking </a></button>
-        <button <a href="" target="_blank">Edit Meeting Booking </a></button>
-		
+       </br>
+		<button><a href="AddMeetingBooking" >Add Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingBooking'))
+		active
+		@endif">
+		</a></button>
+		<button><a href="ViewMeetingBooking" >View Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/ViewMeetingBooking'))
+		active
+		@endif">
+		</a></button>
+		<button><a href="EditMeetingBooking" >Edit Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/EditMeetingBooking'))
+		active
+		@endif">
+		</a></button>
   </center>
 			<center><table>
 			<tr class="center">

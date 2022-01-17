@@ -3,11 +3,17 @@
 $logged_user = session()->get('logged_user');
 $user_name = session()->get('name');
 $roles = session()->get('user_type');
-
 // $all = session()->all();
 
 // var_dump($all);
 ?>
+<style>
+	table.center{
+		margin-left :auto;
+		margin-right :auto;
+	}
+	}
+</style>
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -38,20 +44,24 @@ $roles = session()->get('user_type');
          	<center>
 			 <h1 style="text-align: center;">MEETING BOOKING FORM</h1>
         </br>
-		<button <a href="AddMeetingBooking">Add Meeting Booking</a></button>
-        <button <a href="ViewMeetingBooking">View Meeting Booking </a></button>
-        <button <a href="EditMeetingBooking" target="_blank">Edit Meeting Booking </a></button>
+		<button><a href="AddMeetingBooking" >Add Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingBooking'))
+		active
+		@endif">
+		</a></button>
 		<button><a href="ViewMeetingBooking" >View Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/ViewMeetingBooking'))
 		active
 		@endif">
 		</a></button>
-		<a class="button-73" role="button" href="STDedit">Edit Profile</a>
+		<button><a href="EditMeetingBooking" >Edit Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/EditMeetingBooking'))
+		active
+		@endif">
+		</a></button>
 
   </center>
 	<center><fieldset>
 		     <br>
 
-			<table>
+			 <table class="center">
 				<form action="MeetingBooking" method="POST" >
                 @csrf
 				<center>
@@ -104,6 +114,7 @@ $roles = session()->get('user_type');
 				</td>
 				</tr>
 			</table>
+			<br>
 			<center>
 			<input type="submit" name="Submit" id="Submit" value="Submit" method="post">
             </center>

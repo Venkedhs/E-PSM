@@ -65,18 +65,18 @@ class MeetingController extends Controller
      }
      function addMeetingStatus()  //sv add meeting status
      {
-         $Meeting_Status = $req->input('Meeting_Status');
-         $Meeting_Comment = $req->input('Meeting_Comment');
+    //      $Meeting_Status = $req->input('Meeting_Status');
+    //      $Meeting_Comment = $req->input('Meeting_Comment');
  
-         //table meetings
-         $meetingsv = new meetingsv;
-         $meetingsv->userID = session()->get('logged_user');
-         $meetingsv->Meeting_Status = $Meeting_Status;
-         $meetingsv->Meeting_Comment = $Meeting_Comment; 
-         $meetingsv->save();
-         return redirect("RetriveMeeting");
+    //      //table meetings
+    //      $meetingsv = new meetingsv;
+    //      $meetingsv->userID = session()->get('logged_user');
+    //      $meetingsv->Meeting_Status = $Meeting_Status;
+    //      $meetingsv->Meeting_Comment = $Meeting_Comment; 
+    //      $meetingsv->save();
+          return redirect("RetriveMeeting");
  
-     }
+      }
 
     function retriveMeeting()  //sv view meeting list detail
     {
