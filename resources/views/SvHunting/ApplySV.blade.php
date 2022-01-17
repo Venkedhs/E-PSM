@@ -4,6 +4,13 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
+	#form{
+		position:fixed;
+		top:50%;
+		left:50%;
+		width:250px;
+	}
+
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
@@ -39,7 +46,7 @@
 		     <br>
 
 			<table>
-				<form action="AddMeetingBooking" method="POST" name="meetingForm"  >
+				<form action="ApplySV" method="POST" name="ApplicationForm"  >
                 @csrf
 				<center>
 
@@ -50,7 +57,7 @@
 					<label for="id">Student_ID:</label>
 					</td>
 					<td>
-					<input type="text" name="Student_ID" id="Student_ID">
+					<input type="text" name="STD_id" id="Student_ID">
 					<td>
 					</p>
 				</td>
@@ -60,10 +67,49 @@
 					<td>
 					<p>
 					<td>
-					<label for=SvName>Student_Name</label>
+					<label for=StudentName>Student_Name</label>
 					</td>
 					<td>
 					<input type="text" name="Student_Name" id="Student_Name">
+					</td>
+					</p>
+				</td>
+				</tr>
+
+				<td>
+					<td>
+					<p>
+					<td>
+					<label for=StudentEmail>StudentEmail</label>
+					</td>
+					<td>
+					<input type="text" name="StudentEmail" id="StudentEmail">
+					</td>
+					</p>
+				</td>
+				</tr>
+
+				<td>
+					<td>
+					<p>
+					<td>
+					<label for=StudentNo>Student No</label>
+					</td>
+					<td>
+					<input type="text" name="StudentNo" id="StudentNo">
+					</td>
+					</p>
+				</td>
+				</tr>
+
+				<td>
+					<td>
+					<p>
+					<td>
+					<label for=Course>Course</label>
+					</td>
+					<td>
+					<input type="text" name="Course" id="Course">
 					</td>
 					</p>
 				</td>
@@ -96,25 +142,13 @@
 				</td>
 				</tr>
 
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=StudentEmail>StudentEmail</label>
-					</td>
-					<td>
-					<input type="text" name="StudentEmail" id="StudentEmail">
-					</td>
-					</p>
-				</td>
-				</tr>
-
 				
+
 				<td>
 					<td>
 					<p>
 					<td>
-					<label for=SvExperience>Reason apply sv</label>
+					<label for=Reason>Reason apply sv</label>
 					</td>
 					<td>
 					<input type="text" name="Reason" id="Reason">
