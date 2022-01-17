@@ -9,8 +9,9 @@
 		margin-left :auto;
 		margin-right :auto;
 	}
-	}
+	
 </style>
+
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
