@@ -16,20 +16,21 @@ $roles = session()->get('user_type');
 }
 
 #customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
+  padding: 30px;
+
 }
 
 #customers tr:nth-child(even){background-color: #f2f2f2;}
 
-#customers tr:hover {background-color: #ddd;}
+#customers tr:hover {background-color: #00FF5B;}
 
 #customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 20px;
   text-align: left;
-  background-color: #04AA6D;
-  color: white;
+  background-color: #FCFF00;
+  color: #FF0000;
+  text-align: center;
+
 }
 </style>
 <x-header-new />
@@ -41,7 +42,7 @@ $roles = session()->get('user_type');
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Announcement Board</h1>
+          <h1 class="m-0 text-dark">Homepage</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -56,19 +57,31 @@ $roles = session()->get('user_type');
 
   <!-- Main content -->
   <div class="content">
-    <div class="container">
+    <div class="container" style="top: 40px">
       <table style="width:100%" id="customers">
         <tr>
-            <th>Company</th>
+            <th><b>Announcement Board</b></th>
         </tr>
         <tr>
-            <td>Alfreds Futterkiste</td>
+            <td>
+                <marquee width="100%" direction="left" height="30px">
+                    PSM Students session 2022/2023 can hunt supervisor starting from 25/02/2022
+                </marquee>
+            </td>
           </tr>
           <tr>
-            <td>Maria Anders</td>
+            <td>
+                <marquee width="100%" direction="right" height="30px">
+                    All PSM title proposal will require approvement from both Coordinator and Supervisor
+                </marquee>
+            </td>
           </tr>
           <tr>
-            <td>Germany</td>
+            <td>
+                <marquee width="100%" direction="left" height="30px">
+                    <b>***Any latest announcement will be updated through this page***</b>
+                </marquee>
+            </td>
           </tr>
       </table>
       <h2><br></h2>
