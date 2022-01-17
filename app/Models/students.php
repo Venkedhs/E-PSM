@@ -14,6 +14,6 @@ class students extends Model
 
     public function title()
     {
-        return $this->hasOne(Title::class, 'std_id','id');
+        return $this->hasOne(Title::class, 'stdID','stdID');
     }
 }

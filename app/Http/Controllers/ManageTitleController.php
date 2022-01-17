@@ -25,9 +25,9 @@ class ManageTitleController extends Controller
     // supervisor
     public function myTitles()
     {
-        $sv_id = Auth::user()->supervisor->sv_id;
+        $svID = session()->get('logged_user');
 
-        $titles = Title::where('sv_id', $sv_id)->get();
+        $titles = Title::where('svID', $svID)->get();
         $count = 0;
 
         return view('ManageTitle.myTitle',['titles' => $titles, 'count' => $count]);
@@ -56,8 +56,8 @@ class ManageTitleController extends Controller
     {
         $title = new Title;
 
-        $title->std_id = 0;
-        $title->sv_id = Auth::user()->supervisor->sv_id;
+        $title->stdID = 'none';
+        $title->svID = session()->get('logged_user');
         $title->psm_title = $request->psm_title;
 
         $title->save();
@@ -80,7 +80,7 @@ class ManageTitleController extends Controller
     {
         $model = students::where('userID', session()->get('logged_user'))->first();
         $book_status = !is_null($model->title);
-        $titles = Title::where('svID',$model->sv_id)->get();
+        $titles = Title::where('svID',$model->svID)->get();
         $count = 0;
         return view('ManageTitle.book', ['titles' => $titles, 'count' => $count, 'book_status' => $book_status]);
     }

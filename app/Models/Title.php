@@ -18,21 +18,21 @@ class Title extends Model
 
     public function supervisor()
     {
-        return $this->belongsTo(User::class,'sv_id');
+        return $this->belongsTo(users::class,'sv_id');
     }
     public function supervisor_detail()
     {
-        return $this->belongsTo(Supervisor::class,'sv_id');
+        return $this->belongsTo(supervisors::class,'sv_id');
     }
 
     public function student()
     {
-        return $this->belongsTo(User::class,'id');
+        return $this->belongsTo(users::class,'stdID');
     }
 
     public function student_detail()
     {
-        return $this->belongsTo(Student::class,'std_id');
+        return $this->belongsTo(users::class,'stdID');
     }
 
     public function proposal()

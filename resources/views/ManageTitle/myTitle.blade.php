@@ -86,20 +86,16 @@
                                 {{ $title->psm_title }}
                             </td>
                             <td class="project-actions text-center">
-                                @can('edit title')
-                                    <a class="btn btn-warning btn-sm" href="{{ route('manage-title.edit', $title->title_id) }}">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Edit
-                                    </a>
-                                @endcan
-                                @can('delete title')
-                                    <a class="btn btn-danger btn-sm" href="{{ route('manage-title.delete', $title->title_id) }}">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Delete
-                                    </a>
-                                @endcan
+                                <a class="btn btn-warning btn-sm" href="{{ route('manage-title.edit', $title->title_id) }}">
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Edit
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="{{ route('manage-title.delete', $title->title_id) }}">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Delete
+                                </a>
                             </td>
                         </tr>
                     @endforeach

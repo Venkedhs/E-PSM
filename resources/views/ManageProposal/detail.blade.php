@@ -37,18 +37,16 @@
                 <div class="col-sm-6">
                     <h1>View Proposal</h1>
                 </div>
-                @can('set approval proposal')
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item">
-                                <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#approval-status">
-                                    <i class="fa fa-plus"></i>
-                                    Set Approval Status
-                                </button>
-                            </li>
-                        </ol>
-                    </div>
-                @endcan
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+                            <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#approval-status">
+                                <i class="fa fa-plus"></i>
+                                Set Approval Status
+                            </button>
+                        </li>
+                    </ol>
+                </div>
             </div>
         </div><!-- /.container-fluid -->
     </section>
@@ -108,16 +106,9 @@
                     <div class="card-footer">
                         <div class="row justify-content-center">
                             <div class="col-6">
-                                @can('view all proposals')
-                                    <a href="{{ route('manage-proposal.view-all') }}" class="btn btn-secondary">Back</a>
-                                @endcan
-                                @can('book title')
-                                    <a href="{{ route('manage-title.remove-book-title', $proposal_id) }}" class="btn btn-danger">Cancel Booking</a>
-                                @endcan
-
-                                @can('edit proposal')
-                                    <a href="{{ route('manage-proposal.edit', $proposal_id) }}" class="btn btn-warning">Edit Proposal</a>
-                                @endcan
+                                <a href="{{ route('manage-proposal.view-all') }}" class="btn btn-secondary">Back</a>
+                                <a href="{{ route('manage-title.remove-book-title', $proposal_id) }}" class="btn btn-danger">Cancel Booking</a>
+                                <a href="{{ route('manage-proposal.edit', $proposal_id) }}" class="btn btn-warning">Edit Proposal</a>
                             </div>
                         </div>
                     </div>

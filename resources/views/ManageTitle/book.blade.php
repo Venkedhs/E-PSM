@@ -54,13 +54,11 @@
                                     by: {{ $title->supervisor->name }}
                                 </td>
                                 <td class="project-actions text-center">
-                                    @can('book title')
-                                        <a class="btn btn-success btn-sm @if($book_status === true) disabled @endif" href="{{ route('manage-title.book-title', $title->title_id) }}">
-                                            <i class="fas fa-check">
-                                            </i>
-                                            Book Title
-                                        </a>
-                                    @endcan
+                                    <a class="btn btn-success btn-sm @if($book_status === true) disabled @endif" href="{{ route('manage-title.book-title', $title->title_id) }}">
+                                        <i class="fas fa-check">
+                                        </i>
+                                        Book Title
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach
