@@ -15,6 +15,8 @@ class CreateMeetingsvTable extends Migration
     {
         Schema::create('meetingsv', function (Blueprint $table) {
             $table->id();
+            $table->time('Meeting_Status');
+            $table->string('Meeting_Comment');
             $table->timestamps();
         });
     }

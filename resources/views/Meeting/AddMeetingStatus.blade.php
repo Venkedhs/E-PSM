@@ -1,4 +1,11 @@
-<x-header-new />
+
+<style>
+	table.center{
+		margin-left :auto;
+		margin-right :auto;
+	}
+	}
+</style><x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -7,7 +14,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Supervisor Profile</h1>
+          <h1 class="m-0 text-dark">Supervisor</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -27,24 +34,36 @@
         <tr>
         <center>
 			 <h1 style="text-align: center;">ADD MEETING STATUS</h1>
-        </br>
-		<button <a href="">View Meeting</a></button>
-        <button <a href="" target="_blank">Add Meeting Status </a></button>
+       <br>
+        <button><a href="RetriveMeeting" >View Meeting<class="nav-link  @if(url()->current() ===  URL::to('/RetriveMeeting'))
+	    	active
+		    @endif">
+		</a></button>
+    <button><a href="AddMeetingStatus" >Add Meeting Status<class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingStatus'))
+	    	active
+		    @endif">
+		</a></button>
+    <button><a href="EditMeetingBooking" >Edit Meeting Status<class="nav-link  @if(url()->current() ===  URL::to('/EditMeetingBooking'))
+	    	active
+		    @endif">
+		</a></button>
+  </center>
+		</a></button>
   </center>
 	<center><fieldset>
 		     <br>
 
-			<table>
-				<form action="SVMeetingBooking" method="POST"  >
+			 <table class="center">
+				<form action="RetriveMeeting"  >
                 @csrf
 				<center>
 				<td><td>
 					<p>
 					<td>
-					<label for=UserID">Student ID:</label>
+					<label for=id">Meeting ID:</label>
 					</td>
 					<td>
-					<input type="text" name="userID"> 
+					<input type="text" name="id"> 
 					<td>
 					</p>
 				</td>
@@ -75,7 +94,8 @@
 				</tr>
 			</table>
 			<center>
-			<input type="submit" name="Submit" id="Submit" value="Submit" method="post">
+				<br>
+			<input type="submit" name="Submit" id="Submit" value="Save" method="post">
             </center>
 			</p>
 			</form>

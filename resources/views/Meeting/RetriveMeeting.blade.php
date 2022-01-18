@@ -17,7 +17,7 @@ $roles = session()->get('user_type');
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Supervisor Profile</h1>
+          <h1 class="m-0 text-dark">Supervisor</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -61,13 +61,23 @@ $roles = session()->get('user_type');
   <center>
 			 <h1 style="text-align: center;">MEETING LIST</h1>
         </br>
-		<button <a href="">View Meeting</a></button>
-        <button <a href="" target="_blank">Add Meeting Status </a></button>
-        <button <a href="" target="_blank">Edit Meeting Status </a></button>
+        <button><a href="RetriveMeeting" >View Meeting<class="nav-link  @if(url()->current() ===  URL::to('/RetriveMeeting'))
+	    	active
+		    @endif">
+		</a></button>
+    <button><a href="AddMeetingStatus" >Add Meeting Status<class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingStatus'))
+	    	active
+		    @endif">
+		</a></button>
+    <button><a href="EditMeetingBooking" >Edit Meeting Status<class="nav-link  @if(url()->current() ===  URL::to('/EditMeetingBooking'))
+	    	active
+		    @endif">
+		</a></button>
   </center>
 			<center><table>
 			<tr class="center">
 				<br><br>
+        <th>Meeting ID</th>
 				<th>Student ID</th>
 				<th>Date Booking</th>
 				<th>Start Time</th>

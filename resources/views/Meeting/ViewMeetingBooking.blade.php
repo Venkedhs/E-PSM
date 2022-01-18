@@ -77,10 +77,7 @@ $roles = session()->get('user_type');
 		active
 		@endif">
 		</a></button>
-		<button><a href="EditMeetingBooking" >Edit Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/EditMeetingBooking'))
-		active
-		@endif">
-		</a></button>
+		
   </center>
 			<center><table>
 			<tr class="center">
@@ -100,6 +97,9 @@ $roles = session()->get('user_type');
             <td>:&nbsp&nbsp{{$data->Meeting_Start}}</td>
             <td>:&nbsp&nbsp{{$data->Meeting_End}}</td>
             <td>:&nbsp&nbsp{{$data->Meeting_Purpose}}</td>
+			<td>
+			<td>
+			<td><input type="submit" name="Submit" id="Submit" value="Delete" method="post"><td>
 
     </tr>
      @endforeach

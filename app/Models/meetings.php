@@ -11,4 +11,5 @@ class meetings extends Model
     protected $fillable = [
         'userID', 'Meeting_Date', 'Meeting_Start','Meeting_End', 'Meeting_Purpose'
     ];
+    
 }

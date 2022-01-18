@@ -61,7 +61,7 @@ class MeetingController extends Controller
              ->where('users.userID', '=', $USER_ID)
              ->get();
          return View('Meeting.AddMeeetingStatus')->with('meetingsv', $users);
-         // var_dump($students);
+        //  // var_dump($students);
  
      }
      function addMeetingStatus()  //sv add meeting status
@@ -75,7 +75,7 @@ class MeetingController extends Controller
     //      $meetingsv->Meeting_Status = $Meeting_Status;
     //      $meetingsv->Meeting_Comment = $Meeting_Comment; 
     //      $meetingsv->save();
-          return redirect("RetriveMeeting");
+          return View("Meeting.AddMeetingStatus");
  
       }
 
