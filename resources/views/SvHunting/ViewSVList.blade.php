@@ -1,3 +1,13 @@
+<?php
+
+$logged_user = session()->get('logged_user');
+$user_name = session()->get('name');
+$roles = session()->get('user_type');
+
+// $all = session()->all();
+
+// var_dump($all);
+?>
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -31,9 +41,19 @@
         	<input style="width:80%" type="search" placeholder="SearchSupervisor" name="query">
         	<br>
         	<br>
-        <button <a href="apply">Add Supervisor</a></button>
-        <button <a href="{{ url('ViewSVList')}}" target="_blank">View Supervisor list </a></button>
-        <button <a href="" target="_blank">Delete Supervisor </a></button>
+        
+        
+        <button><a href="ApplySV" >Add Supervisor<class="nav-link  @if(url()->current() ===  URL::to('/ApplySV'))
+		active
+		@endif"></class="nav-link></a></button>
+
+		<button><a href="ViewSVList" >View Supervisor List<class="nav-link  @if(url()->current() ===  URL::to('/ViewSVList'))
+		active
+		@endif"></class="nav-link></a></button>
+
+		<button <a href="" target="_blank">Delete Supervisor </a></button>
+
+
         		        		
   </center>
 			<center><table>
@@ -42,7 +62,8 @@
 				<th>Supervisor ID</th>
 				<th>Supervisor Name</th>
 				<th>Expertise</th>
-							</tr>
+				<th>Action</th>
+			</tr>
 
 		</table></center>
   <!-- /.content -->

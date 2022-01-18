@@ -1,5 +1,14 @@
 // this for student apply for sv
+<?php
 
+$logged_user = session()->get('logged_user');
+$user_name = session()->get('name');
+$roles = session()->get('user_type');
+
+// $all = session()->all();
+
+// var_dump($all);
+?>
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -37,9 +46,21 @@
          	<center>
 			 <h1 style="text-align: center;">Apply SV FORM</h1>
         </br>
-		<button <a href="">Apply supervisor</a></button>
-        <button <a href="" target="_blank">View Supervisor list </a></button>
+		
+		<button><a href="ApplySV" >Add Supervisor<class="nav-link  @if(url()->current() ===  URL::to('/ApplySV'))
+		active
+		@endif"></class="nav-link></a></button>
+
+        
+        <button><a href="ViewApplicationStatus" >View Application Status<class="nav-link  @if(url()->current() ===  URL::to('/ViewApplicationStatus'))
+				active
+				@endif"></class="nav-link></a></button>
+
+				<button><a href="ViewSVList" >View Supervisor List<class="nav-link  @if(url()->current() ===  URL::to('/ViewSVList'))
+				active
+				@endif"></class="nav-link></a></button>
         <button <a href="" target="_blank">delete supervisor list </a></button>
+        
 
   </center>
 	<center><fieldset>
