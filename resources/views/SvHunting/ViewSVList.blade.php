@@ -9,16 +9,20 @@ $roles = session()->get('user_type');
 // var_dump($all);
 ?>
 ?>
-<style>
+
+abort(404);
+
+</style>
+<x-header-new />
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+
+  <style>
   table.center{
     margin-left :auto;
     margin-right :auto;
   }
   }
-</style>
-<x-header-new />
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
 
   <!-- Content Header (Page header) -->
   <div class="content-header">

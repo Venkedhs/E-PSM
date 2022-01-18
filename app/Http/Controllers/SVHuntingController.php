@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SvHunting as SvHunting;
 use Illuminate\Http\Request;
-use App\Models\SvHunting;
+use Illuminate\Support\Facades\DB;
+
 
 class SvHuntingController extends Controller
 {
