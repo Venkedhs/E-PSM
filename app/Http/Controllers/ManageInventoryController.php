@@ -7,17 +7,20 @@ use App\Models\Item;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\users;
 
 class ManageInventoryController extends Controller
 {
 
     public function viewAll()
     {
+        $all_user = users::all();
         $item_model = Item::with('student')->get();
         $count = 0;
         return view('ManageInventory.all-items',[
             'items' => $item_model,
-            'count' => $count
+            'count' => $count,
+            'users' => $all_user
         ]);
     }
 

@@ -115,10 +115,18 @@
                                 {{ $item->name }}
                             </td>
                             <td class="text-center">
-                                {{ (is_null($item->student)) ? 'none' : $item->student->detail->name }}
+                            @foreach($users as $user )
+                            @if($item->stdID==$user->userID)
+                            {{$user->name}}
+                            @endif
+                            
+
+                            @endforeach 
+                                
+
                             </td>
                             <td>
-                                by: {{ $item->student->supervisor->detail->name }}
+                                     {{ $item->student->sv_name }}
                             </td>
                             <td class="text-center">
                                 @switch($item->status_approval)
