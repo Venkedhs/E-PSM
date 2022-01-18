@@ -24,7 +24,7 @@ class ManageInventoryController extends Controller
 
     public function viewOne()
     {
-        $item_model = Item::where('std_id', Auth::id())->get();
+        $item_model = Item::where('stdID', session()->get('logged_user'))->get();
         $count = 0;
         return view('ManageInventory.all-items',[
             'items' => $item_model,
@@ -35,13 +35,10 @@ class ManageInventoryController extends Controller
 
     public function setApproval(Request $request, $item_id)
     {
-        $user = Auth::user();
         $item_model = Item::find($item_id);
 
-        if ($user->can('set approve item')) {
-            $item_model->status_approval = $request->status_approval;
-            $item_model->save();
-        }
+        $item_model->status_approval = $request->status_approval;
+        $item_model->save();
 
         return redirect()->route('manage-inventory.show',$item_id);
     }
@@ -49,12 +46,12 @@ class ManageInventoryController extends Controller
 
     public function store(Request $request)
     {
-        $std_id = Auth::id();
+        $stdID = session()->get('logged_user');
 
         $date_start = DateTime::createFromFormat('d/m/Y', $request->date_start);
         $date_end = DateTime::createFromFormat('d/m/Y', $request->date_end);
         $item_model = new Item;
-        $item_model->std_id = $std_id;
+        $item_model->stdID = $stdID;
         $item_model->name = $request->name;
         $item_model->quantity = $request->quantity;
         $item_model->status_approval = ApprovalStatus::PENDING;

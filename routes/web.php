@@ -111,3 +111,29 @@ Route::get('/search','SvHuntingController@search');
 Route::get('Addsv',[SvHuntingController::class, 'addsv']);
 Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
 Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);
+
+// manage inventory
+use App\Http\Controllers\ManageInventoryController;
+
+Route::group(['prefix' => 'manage-inventory', 'as' => 'manage-inventory.'], function (){
+    Route::get('/items', [ManageInventoryController::class,'viewAll'])
+        ->name('view-all');
+    Route::get('/my-items', [ManageInventoryController::class, 'viewOne'])
+        ->name('view-one');
+
+    Route::post('/add', [ManageInventoryController::class, 'store'])
+        ->name('store');
+
+    Route::get('/show/{item_id}', [ManageInventoryController::class, 'show'])
+        ->name('show');
+
+    Route::get('/edit/{item_id}', [ManageInventoryController::class, 'edit'])
+        ->name('edit');
+    Route::post('/update/{item_id}', [ManageInventoryController::class, 'update'])
+        ->name('update');
+    Route::get('/delete/{item_id}', [ManageInventoryController::class, 'destroy'])
+        ->name('destroy');
+
+    Route::post('/approval/{item_id}', [ManageInventoryController::class, 'setApproval'])
+        ->name('approval');
+});

@@ -12,7 +12,7 @@ class Item extends Model
     protected $primaryKey = 'item_id';
 
     protected $fillable = [
-        'std_id',
+        'stdID',
         'name',
         'quantity',
         'status_approval',
@@ -22,6 +22,6 @@ class Item extends Model
 
     public function student()
     {
-        return $this->belongsTo(Student::class, 'std_id','std_id');
+        return $this->belongsTo(students::class, 'stdID','stdID');
     }
 }
