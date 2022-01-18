@@ -80,27 +80,32 @@ $roles = session()->get('user_type');
     <button><a href="ViewApplicationStatus" >View Application Status<class="nav-link  @if(url()->current() ===  URL::to('/ViewApplicationStatus'))
     active
     @endif">
-    </a></button>
+
+    </a>
+  </button>
   </center>
-      <center><table>
-      <tr class="center">
-        <br><br>
-        <th>Supervisor ID</th>
-        <th>Supervisor Name</th>
-        <th>Expertse</th>
-      </tr>
-      @foreach ($SvHunting as $data)
-   <tr>
+
+      <center>
+        <table>
+          <tr class="center">
+            <br><br>
+            <th>Supervisor ID</th>
+            <th>Supervisor Name</th>
+            <th>Expertse</th>
+          </tr>
+          @foreach ($SvHunting as $data)
+          <tr>
             <h3>:&nbsp&nbsp{{$supervisors[0]->userID}}</h3>
             <h3>:&nbsp&nbsp{{$supervisors[0]->name}}</h3>
             <h3>:&nbsp&nbsp{{$supervisors[0]->expertise}}</h3>
                         
-    </tr>
-     @endforeach
+          </tr>
+         @endforeach
       
         
 
-    </table></center>
+    </table>
+  </center>
   <!-- /.content -->
 
 </div>

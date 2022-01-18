@@ -63,7 +63,16 @@ $roles = session()->get('user_type');
 				<th>Supervisor Name</th>
 				<th>Expertse</th>
 				<th>Status</th>
-							</tr>
+			</tr>
+			@foreach ($SvHunting as $data)
+          <tr>
+            <td>:&nbsp&nbsp{{$data->userID}}</td>
+            <h3>:&nbsp&nbsp{{$data->name}}</h3>
+            <h3>:&nbsp&nbsp{{$data->expertise}}</h3>
+            <h3>:&nbsp&nbsp{{$data->status}}</h3>
+                        
+          </tr>
+         @endforeach
 
 		</table></center>
   <!-- /.content -->

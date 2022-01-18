@@ -34,17 +34,17 @@ class SvHuntingController extends Controller
     function applySV(Request $require)// student apply supervisor
     {
 
-        $ProjectTitle = $req->input('ProjectTitle');
-        $SummariesTopic = $req->input('SummariesTopic');
-        $ReasonApplysv = $req->input('ReasonApplysv');
+        $title = $req->input('title');
+        $topic = $req->input('topic');
+        $reason = $req->input('reason');
         
  
         //table Sv hunting
         $SvHunting = new svHunting;
         $SvHunting->userID = session()->get('logged_user');
-        $SvHunting->ProjectTitle = $ProjectTitle;
-        $SvHunting->SummariesTopic = $SummariesTopic;
-        $SvHunting->ReasonApplysv = $ReasonApplysv;
+        $SvHunting->title = $title;
+        $SvHunting->topic = $topic;
+        $SvHunting->reason = $reason;
         $SvHunting->save();
         return redirect("viewSVList");
     }

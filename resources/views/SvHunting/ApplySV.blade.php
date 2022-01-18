@@ -63,122 +63,39 @@ $roles = session()->get('user_type');
         
 
   </center>
-	<center><fieldset>
+	<center>
+		<fieldset>
 		     <br>
+		     <center>
+        <table>
+          <tr class="center">
+            <br><br>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Email</th>
+            <th>Student No</th>
+            <th>Course</th>
+            <th>Project Title</th>
+            <th>Summaries Topic</th>
+            <th>Reason Apply sv</th>
+          </tr>
+          @foreach ($SvHunting as $data)
+          <tr>
+            <h3>:&nbsp&nbsp{{$student[0]->userID}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->name}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->email}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->no}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->course}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->title}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->topic}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->reason}}</h3>
+                        
+          </tr>
+         @endforeach
 
-			<table class="center">
-				<form action="ApplySV" method="POST" name="ApplicationForm"  >
-                @csrf
-				<center>
+			    </table>
+			  </center>
 
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for="id">Student_ID:</label>
-					</td>
-					<td>
-					<input type="text" name="STD_id" id="Student_ID">
-					<td>
-					</p>
-				</td>
-        </tr>
-				
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=StudentName>Student_Name</label>
-					</td>
-					<td>
-					<input type="text" name="Student_Name" id="Student_Name">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=StudentEmail>StudentEmail</label>
-					</td>
-					<td>
-					<input type="text" name="StudentEmail" id="StudentEmail">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=StudentNo>Student No</label>
-					</td>
-					<td>
-					<input type="text" name="StudentNo" id="StudentNo">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=Course>Course</label>
-					</td>
-					<td>
-					<input type="text" name="Course" id="Course">
-					</td>
-					</p>
-				</td>
-				</tr>
-				
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=title>ProjectTitle</label>
-					</td>
-					<td>
-					<input type="text" name="title" id="title">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=SummariesTopic>SummariesTopic</label>
-					</td>
-					<td>
-					<input type="text" name="SummariesTopic" id="SummariesTopic">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				
-
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=Reason>Reason apply sv</label>
-					</td>
-					<td>
-					<input type="text" name="Reason" id="Reason">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-			</table>
 			<center>
 			<input type="submit" name="Submit" id="Submit" value="Submit" method="post">
             </center>
