@@ -50,7 +50,7 @@ $roles = session()->get('user_type');
          	<center>
 			 <h1 style="text-align: center;">ADD SV FORM</h1>
         </br>
-		<button <a href="" target="_blank">delete supervisor list </a></button>
+		
    	<button><a href="Addsv" >Add Supervisor<class="nav-link  @if(url()->current() ===  URL::to('/Addsv'))
 		active
 		@endif"></class="nav-link></a></button>
@@ -82,74 +82,38 @@ $roles = session()->get('user_type');
 				</td>
         </tr>
 				
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=SvName>SvName</label>
-					</td>
-					<td>
-					<input type="text" name="SvName" id="SvName">
-					</td>
-					</p>
-				</td>
-				</tr>
-				
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=SvExpertise>SvExpertise</label>
-					</td>
-					<td>
-					<input type="text" name="SvExpertise" id="SvExpertise">
-					</td>
-					</p>
-				</td>
-				</tr>
+				<table style="width:100%">
+                <tr>
+                    <td width="30%" class="topleft"><img src="https://avatars.dicebear.com/api/initials/:{{$user_name}}.svg" width="200" height="180">
+                        <h2><br></h2>
+                        <h4>Coordinator add Supervisor</h4>
+                    </td>
+                    <td width="20%">
+                    		
+                        <h2>Name</h2>
+                        <h2>Supervisor ID</h2>
+                        <h2>Faculty</h2>
+                        <h2>Expertise</h2>
+                        <h2>Office</h2>
+                        <h2>Phone Number</h2>
+                        <h2>Email</h2>
+                        
+                    </td>
+                    <td width="50%">
 
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=SvExperience>SvExperience</label>
-					</td>
-					<td>
-					<input type="text" name="SvExperience" id="SvExperience">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=SvContactNo>SvContactNo</label>
-					</td>
-					<td>
-					<input type="text" name="SvContactNo" id="SvContactNo">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=SvEmail>SvEmail</label>
-					</td>
-					<td>
-					<input type="text" name="SvEmail" id="SvEmail">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-			</table>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->name}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->userID}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->faculty}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->expertise}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->office}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->phone}}</h3>
+                        <h3>:&nbsp&nbsp{{$supervisors[0]->email}}</h3>
+                        
+                    </td>
+                </tr>
 			<center>
 			<input type="submit" name="Submit" id="Submit" value="Submit" method="post">
+			<input type="reset" name="reset" id="reset" value="reset" method="post">
             </center>
 			</p>
 			</form>

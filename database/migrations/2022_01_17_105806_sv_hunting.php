@@ -13,7 +13,13 @@ class SvHunting extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('SvHunting', function (Blueprint $table) {
+            $table->id();
+            $table->string(ProjectTitle);
+            $table->string(SummariesTopic);
+            $table->string(Reason);
+            
+        });
     }
 
     /**
