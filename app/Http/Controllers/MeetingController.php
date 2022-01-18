@@ -91,7 +91,7 @@ class MeetingController extends Controller
 
       
     }
-    function editMeetingBooking()  //sv add meeting status
+    function editMeetingBooking()  //sv edit meeting status
     {
         return View('Meeting.EditMeetingBooking'); 
     }
