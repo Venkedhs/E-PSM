@@ -18,8 +18,6 @@ class SvHunting extends Migration
             $table->string('title');
             $table->string('topic');
             $table->string('reason');
-            
-        });
     }
 
     /**
