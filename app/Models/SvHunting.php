@@ -9,6 +9,6 @@ class SvHunting extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'userID', 'title', 'topic','reason', 'Meeting_Purpose', 'expertise', 'faculty', 'office'
+        'userID', 'name','title', 'topic','reason', 'expertise', 'faculty', 'office'
     ];
 }

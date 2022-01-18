@@ -64,7 +64,7 @@ $roles = session()->get('user_type');
 				<th>Expertise</th>
 				<th>Status</th>
 			</tr>
-			@foreach ($sv_hunting as $data)
+			@foreach ($ as $data)
           <tr>
             
             <h3>:&nbsp&nbsp{{$data->name}}</h3>

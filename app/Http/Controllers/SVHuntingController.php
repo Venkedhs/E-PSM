@@ -20,17 +20,17 @@ class SvHuntingController extends Controller
     }
 
     //student
-    public function svHuntingInterface()
-    {
-        $USER_ID = session()->get('logged_user');
-        $users = DB::table('users')
-            ->Join('sv_hunting', 'users.userID', '=', 'sv_hunting.userID')
-            ->where('sv_hunting.userID', '=', $USER_ID)
-            ->get();
-        return View('SvHunting.ApplySV')->with('sv_hunting', $users);
+    //public function svHuntingInterface()
+    //{
+      //  $USER_ID = session()->get('logged_user');
+      //  $users = DB::table('users')
+      //      ->Join('sv_hunting', 'users.userID', '=', 'sv_hunting.userID')
+      //      ->where('sv_hunting.userID', '=', $USER_ID)
+      //      ->get();
+      //  return View('SvHunting.ApplySV')->with('sv_hunting', $users);
         // var_dump($students);
 
-    }
+    //}
 
 
     function applySV(Request $require)// student apply supervisor
