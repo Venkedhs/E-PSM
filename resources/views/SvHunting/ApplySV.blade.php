@@ -18,7 +18,7 @@ $roles = session()->get('user_type');
 		margin-left :auto;
 		margin-right :auto;
 	}
-	}
+	
 </style>
   <!-- Content Header (Page header) -->
   <div class="content-header">

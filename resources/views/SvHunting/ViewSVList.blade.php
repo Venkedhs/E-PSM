@@ -7,12 +7,12 @@ $roles = session()->get('user_type');
 // $all = session()->all();
 
 // var_dump($all);
-?>
+
 ?>
 
-abort(404);
 
-</style>
+
+
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -22,8 +22,8 @@ abort(404);
     margin-left :auto;
     margin-right :auto;
   }
-  }
-
+  
+</style>
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
