@@ -98,7 +98,7 @@ $roles = session()->get('user_type');
             <br><br>
             
             <th>Supervisor Name</th>
-            <th>Expertse</th>
+            <th>Expertise</th>
           </tr>
           @foreach ($SvHunting as $data)
           <tr>
