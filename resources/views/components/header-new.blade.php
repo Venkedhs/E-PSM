@@ -48,11 +48,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			<!-- Right navbar links -->
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a href="home" class="nav-link">Main</a>
+					<a href="/home" class="nav-link">Main</a>
 				</li>
 
 				<li class="nav-item active">
-					<a href="logout" class="nav-link">Logout</a>
+					<a href="/logout" class="nav-link">Logout</a>
 				</li>
 			</ul>
 		</nav>
@@ -62,7 +62,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<aside class="main-sidebar sidebar-light-purple elevation-2">
 			<!-- Brand Logo -->
 			<a class="brand-link" style="text-align: center;">
-				<img class="w-50 h-auto" src="./images/ump_logo.png" alt="UMP" />
+				<img class="w-50 h-auto" src="/./images/ump_logo.png" alt="UMP" />
 			</a>
 
 			<!-- Sidebar -->
@@ -131,14 +131,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								</li>
 
 								<li class="nav-item">
-									<a href="javascript:;" class="nav-link disabled">
+									<a href="/manage-title/view" class="nav-link @if(url()->current() ===  URL::to('/manage-title/view'))
+								active
+						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
 										<p>3.0 Title selection</p>
 									</a>
 								</li>
 
 								<li class="nav-item">
-									<a href="LogbookStudent" class="nav-link  @if(url()->current() ===  URL::to('/LogbookStudent'))
+									<a href="/LogbookStudent" class="nav-link  @if(url()->current() ===  URL::to('/LogbookStudent'))
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
@@ -147,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								</li>
 
 								<li class="nav-item">
-									<a href="AddMeetingBooking" class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingBooking'))
+									<a href="/AddMeetingBooking" class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingBooking'))
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
