@@ -112,5 +112,9 @@ Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
 Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);
 
 
-
+//Route::get('Addsv', [SvHuntingController::class, 'SvHuntingInterface']);
+//Route::get('Addsv',[SvHuntingController::class, 'addsv']);
+//Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
+//Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);
+//Route::get('apply', [SVHuntingController::class, 'applySV']);
 
