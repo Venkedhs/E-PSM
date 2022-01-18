@@ -16,8 +16,8 @@ class SvHunting extends Migration
         Schema::create('SvHunting', function (Blueprint $table) {
             $table->id();
             $table->string(title);
-            $table->string(SummariesTopic);
-            $table->string(Reason);
+            $table->string(topic);
+            $table->string(reason);
             
         });
     }
