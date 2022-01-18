@@ -9,6 +9,7 @@ $roles = session()->get('user_type');
 // var_dump($all);
 
 ?>
+?>
 
 
 
@@ -18,12 +19,14 @@ $roles = session()->get('user_type');
 <div class="content-wrapper">
 
   <style>
+
   table.center{
     margin-left :auto;
     margin-right :auto;
   }
   
 </style>
+
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
@@ -71,35 +74,35 @@ $roles = session()->get('user_type');
       </style>
      </style>
   <center>
-       <h1 style="text-align: center;">Supervisor application</h1>
+       <h1 style="text-align: center;">Supervisor List</h1>
        </br>
     <button><a href="ApplySV" >Add Superisor<class="nav-link  @if(url()->current() ===  URL::to('/ApplySV'))
     active
     @endif">
-    </a></button>
-    <button><a href="ViewSVList" >View Supervisor list<class="nav-link  @if(url()->current() ===  URL::to('/ViewSVList'))
+    </a></button> //student apply sv
+    <button><a href="ViewSVList" >View Supervisor list<class="nav-link  @if(url()->current() ===  URL::to('/ViewSVList')) 
     active
     @endif">
-    </a></button>
+    </a></button> // view sv list
     <button><a href="ViewApplicationStatus" >View Application Status<class="nav-link  @if(url()->current() ===  URL::to('/ViewApplicationStatus'))
     active
     @endif">
 
     </a>
-  </button>
+  </button> // view application status
   </center>
 
       <center>
         <table>
           <tr class="center">
             <br><br>
-            <th>Supervisor ID</th>
+            
             <th>Supervisor Name</th>
             <th>Expertse</th>
           </tr>
           @foreach ($SvHunting as $data)
           <tr>
-            <h3>:&nbsp&nbsp{{$supervisors[0]->userID}}</h3>
+            
             <h3>:&nbsp&nbsp{{$supervisors[0]->name}}</h3>
             <h3>:&nbsp&nbsp{{$supervisors[0]->expertise}}</h3>
                         

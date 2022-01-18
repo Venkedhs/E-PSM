@@ -53,21 +53,21 @@ class SvHuntingController extends Controller
 
     function viewSVList(Request $require) // view supervisor list
     {
-        $USER_ID = session()->get('logged_user');
-        $users = DB::table('sv_hunting')
-            ->where('userID', '=', $USER_ID)
-            ->get();
-        return View('SvHunting.ViewSVList')->with('sv_hunting', $users);
+        //$USER_ID = session()->get('logged_user');
+        //$users = DB::table('sv_hunting')
+          //  ->where('userID', '=', $USER_ID)
+          //  ->get();
+        return View('SvHunting.ViewSVList');
          //var_dump($users);
     }
 
     function viewApplicationStatus(Request $require)//student view application status
     {
-        $USER_ID = session()->get('logged_user');
-        $users = DB::table('sv_hunting')
-            ->where('userID', '=', $USER_ID)
-            ->get();
-        return View('SvHunting.ViewApplicationStatus')->with('sv_hunting', $users);
+        //$USER_ID = session()->get('logged_user');
+        //$users = DB::table('sv_hunting')
+         //   ->where('userID', '=', $USER_ID)
+         //   ->get();
+        return View('SvHunting.ViewApplicationStatus');//->with('sv_hunting', $users);
          //var_dump($users);
     }
 
