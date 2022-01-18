@@ -87,30 +87,30 @@ Route::post('CO_update', 'coordinatorController@update_profile');
 //MeetingBooking
 use App\Http\Controllers\MeetingController;
 
-Route::get('AddMeetingBooking', [MeetingController::class, 'addMeetingBooking']); //student add meeting booking
+Route::get('AddMeetingBooking', [MeetingController::class, 'MeetingInterface']);//student add meeting booking
 Route::get('ViewMeetingBooking', [MeetingController::class, 'viewMeetingBooking']); //student view meeting
 Route::get('EditMeetingBooking', [MeetingController::class, 'editMeetingBooking']); //student edit meetig booking
 Route::get('RetriveMeeting', [MeetingController::class, 'retriveMeeting']); //sv view meeting list detail
 Route::get('AddMeetingStatus', [MeetingController::class, 'addMeetingStatus']); //sv add meeting status
 
-Route::post('AddMeetingBooking', 'MeetingController@addMeetingBooking');
+Route::post('MeetingBooking', 'MeetingController@addMeetingBooking');
+
 
 //Logbook
 use App\Http\Controllers\LogbookController;
 
 Route::get('LogbookStudent', [LogbookController::class, 'logbookview']);
-Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
-Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
-Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
 
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;
 
-Route::get('ViewSVList',[SvHuntingController::class, 'viewSVList']); //View sv list
+Route::get('ViewSvList',[SvHuntingController::class, 'viewSVList']); //View sv list
 Route::get('/search','SvHuntingController@search');
+
 Route::get('Addsv',[SvHuntingController::class, 'addsv']);
 Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
 Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);
+
 
 // manage inventory
 use App\Http\Controllers\ManageInventoryController;
@@ -137,3 +137,12 @@ Route::group(['prefix' => 'manage-inventory', 'as' => 'manage-inventory.'], func
     Route::post('/approval/{item_id}', [ManageInventoryController::class, 'setApproval'])
         ->name('approval');
 });
+
+
+//Route::get('Addsv', [SvHuntingController::class, 'SvHuntingInterface']);
+//Route::get('Addsv',[SvHuntingController::class, 'addsv']);
+//Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
+//Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);
+//Route::get('apply', [SVHuntingController::class, 'applySV']);
+
+

@@ -1,4 +1,11 @@
-<x-header-new />
+
+<style>
+	table.center{
+		margin-left :auto;
+		margin-right :auto;
+	}
+	}
+</style><x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -7,7 +14,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Student Profile</h1>
+          <h1 class="m-0 text-dark">Supervisor</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -25,82 +32,70 @@
     <div class="container">
       <table style="width:100%">
         <tr>
-         	<center>
-			 <h1 style="text-align: center;">EDIT MEETING</h1>
-        </br>
-		<button <a href="">Add Meeting Booking</a></button>
-        <button <a href="" target="_blank">View Meeting Booking </a></button>
-        <button <a href="" target="_blank">Edit Meeting Booking </a></button>
+        <center>
+			 <h1 style="text-align: center;">EDIT MEETING STATUS</h1>
+       <br>
+        <button><a href="RetriveMeeting" >View Meeting<class="nav-link  @if(url()->current() ===  URL::to('/RetriveMeeting'))
+	    	active
+		    @endif">
+		</a></button>
+    <button><a href="AddMeetingStatus" >Add Meeting Status<class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingStatus'))
+	    	active
+		    @endif">
+		</a></button>
+    <button><a href="EditMeetingBooking" >Edit Meeting Status<class="nav-link  @if(url()->current() ===  URL::to('/EditMeetingBooking'))
+	    	active
+		    @endif">
+		</a></button>
+  </center>
+		</a></button>
   </center>
 	<center><fieldset>
 		     <br>
 
-			<table>
-				<form action="AddMeetingBooking" method="POST" name="meetingForm"  >
+			 <table class="center">
+				<form action="RetriveMeeting"  >
                 @csrf
 				<center>
 				<td><td>
 					<p>
 					<td>
-					<label for="id">Student ID:</label>
+					<label for=id">Meeting ID:</label>
 					</td>
 					<td>
-					<input type="text" name="STD_id" id="STD_ID">
+					<input type="text" name="id"> 
 					<td>
 					</p>
 				</td>
                 </tr>
-				
+			
 				<td><td>
 					<p>
 					<td>
-					<label for=Meeting_Date>Meeting Date:</label>
+					<label for="Meeting_Status">Meeting status:</label>
 					</td>
 					<td>
-					<input type="date" name="Meeting_date" id="Meeting_Date">
+					<input type="text" name="Meeting_Status" >  
 					</td>
 					</p>
 				</td>
 				</tr>
 
-				<td><td>
+                <td><td>
 					<p>
 					<td>
-					<label for=Meeting_Start>Start Time:</label>
+					<label for="Meeting_Comment">Meeting Comment:</label>
 					</td>
 					<td>
-					<input type="time" name="Meeting_start" id="Meeting_Start">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td><td>
-					<p>
-					<td>
-					<label for=Meeting_End>End Time:</label>
-					</td>
-					<td>
-					<input type="time" name="Meeting_end" id="Meeting_End">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td><td>
-					<p>
-					<td>
-					<label for="Meeting_Purpose">Meeting purpose:</label>
-					</td>
-					<td>
-					<input type="text" name="Meeting_purpose" id="Meeting_Purpose">
+					<input type="text" name="Meeting_Comment"> 
 					</td>
 					</p>
 				</td>
 				</tr>
 			</table>
 			<center>
-			<input type="submit" name="Save" id="Save" value="Save" method="post">
+				<br>
+			<input type="submit" name="Submit" id="Submit" value="Save" method="post">
             </center>
 			</p>
 			</form>

@@ -1,5 +1,14 @@
 // this for student apply for sv
+<?php
 
+$logged_user = session()->get('logged_user');
+$user_name = session()->get('name');
+$roles = session()->get('user_type');
+
+// $all = session()->all();
+
+// var_dump($all);
+?>
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -11,7 +20,6 @@
 	}
 	
 </style>
-
   <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
@@ -33,132 +41,61 @@
   <!-- Main content -->
   <div class="content">
     <div class="container">
-      <table style="width:100%">
+      <table style="width:100%"> 
         <tr>
          	<center>
 			 <h1 style="text-align: center;">Apply SV FORM</h1>
         </br>
-		<button <a href="{{ url('ApplySV')}}">Apply supervisor</a></button>
-        <button <a href="{{ url('ViewSVList')}}" target="_blank">View Supervisor list </a></button>
+		
+		<button><a href="ApplySV" >Add Supervisor<class="nav-link  @if(url()->current() ===  URL::to('/ApplySV'))
+		active
+		@endif"></class="nav-link></a></button>
+
+        
+        <button><a href="ViewApplicationStatus" >View Application Status<class="nav-link  @if(url()->current() ===  URL::to('/ViewApplicationStatus'))
+				active
+				@endif"></class="nav-link></a></button>
+
+				<button><a href="ViewSVList" >View Supervisor List<class="nav-link  @if(url()->current() ===  URL::to('/ViewSVList'))
+				active
+				@endif"></class="nav-link></a></button>
         <button <a href="" target="_blank">delete supervisor list </a></button>
+        
 
   </center>
-	<center><fieldset>
+	<center>
+		<fieldset>
 		     <br>
+		     <center>
+        <table>
+          <tr class="center">
+            <br><br>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Email</th>
+            <th>Student No</th>
+            <th>Course</th>
+            <th>Project Title</th>
+            <th>Summaries Topic</th>
+            <th>Reason Apply sv</th>
+          </tr>
+          @foreach ($SvHunting as $data)
+          <tr>
+            <h3>:&nbsp&nbsp{{$student[0]->userID}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->name}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->email}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->no}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->course}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->title}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->topic}}</h3>
+            <h3>:&nbsp&nbsp{{$student[0]->reason}}</h3>
+                        
+          </tr>
+         @endforeach
 
-			<table class="center">
-				<form action="ApplySV" method="POST" name="ApplicationForm"  >
-                @csrf
-				<center>
+			    </table>
+			  </center>
 
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for="id">Student_ID:</label>
-					</td>
-					<td>
-					<input type="text" name="STD_id" id="Student_ID">
-					<td>
-					</p>
-				</td>
-        </tr>
-				
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=StudentName>Student_Name</label>
-					</td>
-					<td>
-					<input type="text" name="Student_Name" id="Student_Name">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=StudentEmail>StudentEmail</label>
-					</td>
-					<td>
-					<input type="text" name="StudentEmail" id="StudentEmail">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=StudentNo>Student No</label>
-					</td>
-					<td>
-					<input type="text" name="StudentNo" id="StudentNo">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=Course>Course</label>
-					</td>
-					<td>
-					<input type="text" name="Course" id="Course">
-					</td>
-					</p>
-				</td>
-				</tr>
-				
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=title>ProjectTitle</label>
-					</td>
-					<td>
-					<input type="text" name="title" id="title">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=SummariesTopic>SummariesTopic</label>
-					</td>
-					<td>
-					<input type="text" name="SummariesTopic" id="SummariesTopic">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-				
-
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for=Reason>Reason apply sv</label>
-					</td>
-					<td>
-					<input type="text" name="Reason" id="Reason">
-					</td>
-					</p>
-				</td>
-				</tr>
-
-			</table>
 			<center>
 			<input type="submit" name="Submit" id="Submit" value="Submit" method="post">
             </center>

@@ -1,20 +1,31 @@
+<?php
+
+$logged_user = session()->get('logged_user');
+$user_name = session()->get('name');
+$roles = session()->get('user_type');
+
+// $all = session()->all();
+
+// var_dump($all);
+
+?>
+?>
+
+
+
+
 <x-header-new />
-
-<style type="text/css">
-			            
-			  
-				table.center{
-				margin-left :auto;
-				margin-right :auto;
-				}
-
-		 	 }
-				
-			
-		 </style>
-		
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
+
+  <style>
+
+  table.center{
+    margin-left :auto;
+    margin-right :auto;
+  }
+  
+</style>
 
   <!-- Content Header (Page header) -->
   <div class="content-header">
@@ -34,29 +45,74 @@
   </div>
   <!-- /.content-header -->
  
-  
+  <style>
+  .form-center form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+</style>
   <!-- Main content -->
-  
+  <style type="text/css">
+      <style>
+            
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        border: 1px solid black;
+        width: 100%;}
+        
+        th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        padding: 6px;
+        background:#B2B2B2;
+        color: black;}
+        
+      </style>
+     </style>
   <center>
-			 <h1 style="text-align: center;">SUPERVISOR LIST</h1>
-        </br>
-        <form class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}"></form>
-        	<input class="form-control mr-sm-2" type="search" placeholder="SearchSupervisor" name="query">
-        <button <a href="{{url('ApplySV')}}">Add Supervisor</a></button>
-        <button <a href="{{ url('ViewSVList')}}" target="_blank">View Supervisor list </a></button>
-        <button <a href="" target="_blank">Delete Supervisor </a></button>
+       <h1 style="text-align: center;">Supervisor List</h1>
+       </br>
+    <button><a href="ApplySV" >Add Superisor<class="nav-link  @if(url()->current() ===  URL::to('/ApplySV'))
+    active
+    @endif">
+    </a></button> //student apply sv
+    <button><a href="ViewSVList" >View Supervisor list<class="nav-link  @if(url()->current() ===  URL::to('/ViewSVList')) 
+    active
+    @endif">
+    </a></button> // view sv list
+    <button><a href="ViewApplicationStatus" >View Application Status<class="nav-link  @if(url()->current() ===  URL::to('/ViewApplicationStatus'))
+    active
+    @endif">
 
-        		
+    </a>
+  </button> // view application status
   </center>
-			<center><table>
-			<tr class="center">
-				<br><br>
-				<th>Supervisor ID</th>
-				<th>Supervisor Name</th>
-				<th>Expertse</th>
-							</tr>
 
-		</table></center>
+      <center>
+        <table>
+          <tr class="center">
+            <br><br>
+            
+            <th>Supervisor Name</th>
+            <th>Expertise</th>
+          </tr>
+          @foreach ($SvHunting as $data)
+          <tr>
+            
+            <h3>:&nbsp&nbsp{{$supervisors[0]->name}}</h3>
+            <h3>:&nbsp&nbsp{{$supervisors[0]->expertise}}</h3>
+                        
+          </tr>
+         @endforeach
+      
+        
+
+    </table>
+  </center>
   <!-- /.content -->
 
 </div>
