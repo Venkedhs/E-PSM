@@ -53,8 +53,8 @@ $roles = session()->get('user_type');
    	<button><a href="Addsv" >Add Supervisor<class="nav-link  @if(url()->current() ===  URL::to('/Addsv'))
 		active
 		@endif">
-      
     </class="nav-link></a></button>
+
 		<button><a href="ViewSVList" >View Supervisor List<class="nav-link  @if(url()->current() ===  URL::to('/ViewSVList'))
 		active
 		@endif"></class="nav-link></a></button>
@@ -62,5 +62,14 @@ $roles = session()->get('user_type');
 		<button <a href="" target="_blank">Delete Supervisor </a></button>
 
   </center>
-	<center><fieldset>
-		     <br>
+
+  </div><!-- /.container -->
+  </div>
+  <!-- /.content -->
+
+</div>
+<!-- ./wrapper -->
+
+
+<x-footer-new />
+	
