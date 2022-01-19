@@ -12,6 +12,7 @@ class Proposal extends Model
     protected $primaryKey = 'proposal_id';
 
     protected $fillable = [
+        'title_id',
         'objective',
         'scope_of_project',
         'problem_background',

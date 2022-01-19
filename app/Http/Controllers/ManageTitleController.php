@@ -18,7 +18,7 @@ class ManageTitleController extends Controller
     {
         $titles = Title::with(['supervisor','supervisor_detail'])->get();
         $count = 0;
-
+        // dd($titles);
         return view('ManageTitle.index', ['titles' => $titles, 'count' => $count]);
     }
 
@@ -59,11 +59,16 @@ class ManageTitleController extends Controller
         $title->stdID = 'none';
         $title->svID = session()->get('logged_user');
         $title->psm_title = $request->psm_title;
-
+    
         $title->save();
-        $proposal = Proposal::factory()->create([
+        
+        $proposal = Proposal::create([
             'title_id' => $title->title_id,
-            'status_approval' => ApprovalStatus::PENDING
+            'objective' => 'none',
+            'scope_of_project' => 'none',
+            'problem_background' => 'none',
+            'techniques' => 'none',
+            'status_approval' => 2
         ]);
 
         return redirect()->route('manage-title.my-titles');
@@ -78,7 +83,7 @@ class ManageTitleController extends Controller
 
     public function book()
     {
-        $model = students::where('userID', session()->get('logged_user'))->first();
+        $model = students::where('stdID', session()->get('logged_user'))->first();
         $book_status = !is_null($model->title);
         $titles = Title::where('svID',$model->svID)->get();
         $count = 0;

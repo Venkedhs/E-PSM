@@ -145,10 +145,10 @@ Route::group(['prefix' => 'manage-title', 'as' => 'manage-title.'], function (){
 // manage proposal
 Route::group(['prefix' => 'manage-proposal', 'as' => 'manage-proposal.'], function () {
     Route::get('/proposals', [ManageProposalController::class, 'viewAll'])
-        ->middleware('permission:view all proposals')
+        
         ->name('view-all');
     Route::get('/proposal', [ManageProposalController::class, 'viewOne'])
-        ->middleware('permission:view proposal')
+       
         ->name('view-one');
     Route::get('/detail/{proposal_id}', [ManageProposalController::class, 'detail'])
         ->name('detail');

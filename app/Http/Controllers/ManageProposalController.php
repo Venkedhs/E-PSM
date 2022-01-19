@@ -13,13 +13,18 @@ class ManageProposalController extends Controller
 
     public function viewAll()
     {
+        
         $title = null;
-        $user = Auth::user();
-        if ($user->user_type == 'coordinator') {
+        $stdID = session()->get('logged_user');
+        $user = users::where('userID', $stdID)->first();
+        // dd($user);
+        
+        if ($user->user_type == 'Coordinator') {
             $title = Title::with('proposal','student')->get();
 
-        } elseif ($user->user_type == 'supervisor') {
-            $title = Title::where('sv_id',$user->supervisor->sv_id)->with('proposal','student')->get();
+        } elseif ($user->user_type == 'Supervisor') {
+            // dd($user->supervisor);
+            $title = Title::where('svID',$user->supervisor->svID)->with('proposal','student')->get();
 
         } else {
             dd('error');
@@ -30,10 +35,12 @@ class ManageProposalController extends Controller
 
     public function viewOne()
     {
-        $user = Auth::user();
+        $stdID = session()->get('logged_user');
+        $user = users::where('userID', $stdID)->first();
+        
         $student = $user->student;
         $title_model = $student->title;
-
+        dd($title_model);
         if (!is_null($title_model)) {
             $proposal_model = $title_model->proposal;
             return view('ManageProposal.detail',[
@@ -42,7 +49,7 @@ class ManageProposalController extends Controller
                 'proposal_id' => $proposal_model->proposal_id
             ]);
         } else {
-            return view('ManageProposal.blank');
+            return view('ManageProposal.detail');
         }
     }
 

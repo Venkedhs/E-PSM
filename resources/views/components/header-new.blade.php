@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
 						<li class="nav-item">
-							<a href="home" class="nav-link  @if(url()->current() ===  URL::to('/home'))
+							<a href="/home" class="nav-link  @if(url()->current() ===  URL::to('/home'))
 								active
 						   @endif">
 								<i class="nav-icon far far fa-edit"></i>
@@ -213,7 +213,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							<ul class="nav nav-treeview  ">
 
 								<li class="nav-item">
-									<a href="javascript:;" class="nav-link disabled">
+									<a href="/manage-proposal/proposals" class="nav-link ">
 										<i class="fas fa-angle-right nav-icon"></i>
 										<p>2.0 Proposal</p>
 									</a>
@@ -227,7 +227,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								</li>
 
 								<li class="nav-item">
-									<a href="LogbookStudent" class="nav-link  @if(url()->current() ===  URL::to('/LogbookStudent'))
+									<a href="/LogbookStudent" class="nav-link  @if(url()->current() ===  URL::to('/LogbookStudent'))
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
@@ -236,7 +236,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								</li>
 
 								<li class="nav-item">
-									<a href="RetriveMeeting" class="nav-link  @if(url()->current() ===  URL::to('/RetriveMeeting'))
+									<a href="/RetriveMeeting" class="nav-link  @if(url()->current() ===  URL::to('/RetriveMeeting'))
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>

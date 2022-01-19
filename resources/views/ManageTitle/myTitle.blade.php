@@ -33,7 +33,7 @@
                 <div class="col-sm-6">
                     <h1>My titles</h1>
                 </div>
-                @can('add title')
+               
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item">
@@ -44,7 +44,7 @@
                             </li>
                         </ol>
                     </div>
-                @endcan
+                
             </div>
         </div><!-- /.container-fluid -->
     </section>
