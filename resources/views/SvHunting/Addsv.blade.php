@@ -61,79 +61,108 @@ $roles = session()->get('user_type');
 		<button <a href="" target="_blank">Delete Supervisor </a></button>
 
   </center>
-	<center><fieldset>
-		     <br>
 
-			<table>
-				<form action="AddMeetingBooking" method="POST" name="meetingForm"  >
+  <center><fieldset>
+         <br>
+
+       <table class="center">
+        <form action="Addsv" method="POST" >
                 @csrf
-				<center>
-
-				<td>
-					<td>
-					<p>
-					<td>
-					<label for="id">Coordinator ID:</label>
-					</td>
-					<td>
-					<input type="text" name="CO_id" id="CO_ID">
-					<td>
-					</p>
-				</td>
+        <center>
+        
+        <td><td>
+          <p>
+          <td>
+          <label for=Name>Name:</label>
+          </td>
+          <td>
+          <input type="Name" name="Name">
+          </td>
+          </p>
+        </td>
         </tr>
-				
-				<table style="width:100%">
-                <tr>
-                    <td width="30%" class="topleft"><img src="https://avatars.dicebear.com/api/initials/:{{$user_name}}.svg" width="200" height="180">
-                        <h2><br></h2>
-                        <h4>Coordinator add Supervisor</h4>
-                    </td>
-                    <td width="20%">
-                    		
-                        <h2>Name</h2>
-                        <h2>Supervisor ID</h2>
-                        <h2>Faculty</h2>
-                        <h2>Expertise</h2>
-                        <h2>Office</h2>
-                        <h2>Phone Number</h2>
-                        <h2>Email</h2>
-                        
-                    </td>
-                    <td width="50%">
 
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->name}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->userID}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->faculty}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->expertise}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->office}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->phone}}</h3>
-                        <h3>:&nbsp&nbsp{{$supervisors[0]->email}}</h3>
-                        
-                    </td>
-                </tr>
-			<center>
-			<input type="submit" name="Submit" id="Submit" value="Submit" method="post">
-			<input type="reset" name="reset" id="reset" value="reset" method="post">
+        <td><td>
+          <p>
+          <td>
+          <label for=Supervisor_ID>Supervisor ID:</label>
+          </td>
+          <td>
+          <input type="Supervisor_ID" name="Supervisor_ID">
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for=Faculty>Faculty:</label>
+          </td>
+          <td>
+          <input type="Faculty" name="Faculty">
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for="Expertise">Expertise:</label>
+          </td>
+          <td>
+          <input type="text" name="Expertise"> 
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for="Office">Office:</label>
+          </td>
+          <td>
+          <input type="text" name="Office"> 
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for="Phon_Number">Phone Number:</label>
+          </td>
+          <td>
+          <input type="text" name="Phone_Number"> 
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for="Email">Email:</label>
+          </td>
+          <td>
+          <input type="text" name="Email"> 
+          </td>
+          </p>
+        </td>
+        </tr>
+
+      </table>
+      <br>
+      <center>
+      <input type="submit" name="Submit" id="Submit" value="Submit" method="post">
             </center>
-			</p>
-			</form>
-		</fieldset>
-	</center>
-</table>
-    </div><!-- /.container -->
-  </div>
-  <!-- /.content -->
-
-</div>
-<!-- ./wrapper -->
-
-
-			<input type="submit" name="Submit" id="Submit" value="Submit" method="post">
-            </center>
-			</p>
-			</form>
-		</fieldset>
-	</center>
+      </p>
+      </form>
+    </fieldset>
+  </center>
 </table>
     </div><!-- /.container -->
   </div>
