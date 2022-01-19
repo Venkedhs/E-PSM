@@ -100,6 +100,12 @@ Route::post('MeetingBooking', 'MeetingController@addMeetingBooking');
 use App\Http\Controllers\LogbookController;
 
 Route::get('LogbookStudent', [LogbookController::class, 'logbookview']);
+Route::get('LogbookEdit', [LogbookController::class, 'logbookEdit']);
+Route::get('LogbookAdd', [LogbookController::class, 'logbookAdd']);
+Route::get('LogbookDelete', [LogbookController::class, 'logbookDelete']);
+Route::get('LogbookViewStd', [LogbookController::class, 'logbookstudentview']);
+
+Route::post('Add', 'LogbookController@AddLogbook');
 
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;

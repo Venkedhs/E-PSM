@@ -13,7 +13,15 @@ class Logbook extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('logbook', function (Blueprint $table) {
+            $table->id();
+            $table->string('Title');
+            $table->string('Prepared_by');
+            $table->string('Date');
+            $table->string('Description');
+            $table->timestamps();
+        }
+    );
     }
 
     /**
@@ -23,6 +31,6 @@ class Logbook extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('logbook');
     }
 }

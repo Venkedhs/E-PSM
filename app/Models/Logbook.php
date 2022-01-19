@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Logbook extends Model
+class logbook extends Model
 {
-    // use HasFactory;
+    use HasFactory;
 
-    // protected $fillable = [
-    //     'name', 'password', 'studentID', 'faculty', 'course', 'sem_year', 'address', 'phone', 'email', 'sv_name'
-    // ];
+    protected $fillable = [
+    'Title', 'Prepared_by', 'Date', 'Description'
+    ];
 }
