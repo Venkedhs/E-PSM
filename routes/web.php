@@ -69,48 +69,55 @@ use App\Http\Controllers\supervisorController;
 
 Route::get('supervisorprofile', [supervisorController::class, 'index']);
 Route::get('SVedit', [supervisorController::class, 'editprofile']);
-Route::post('SV_update', 'supervisorController@updateprofile');
+Route::post('SV_update', 'supervisorController@update_profile');
 // url tak boleh sama tapi ada cara kalau nak pakai url sama
 
 use App\Http\Controllers\technicianController;
 
 Route::get('technicianprofile', [technicianController::class, 'index']);
 Route::get('TECHedit', [technicianController::class, 'editprofile']);
-Route::post('TECH_update', 'technicianController@updateprofile');
+Route::post('TECH_update', 'technicianController@update_profile');
 
 use App\Http\Controllers\coordinatorController;
 
 Route::get('coordinatorprofile', [coordinatorController::class, 'index']);
 Route::get('COedit', [coordinatorController::class, 'editprofile']);
-Route::post('CO_update', 'coordinatorController@updateprofile');
+Route::post('CO_update', 'coordinatorController@update_profile');
 
 //MeetingBooking
 use App\Http\Controllers\MeetingController;
 
-Route::get('AddMeetingBooking', [MeetingController::class, 'addMeetingBooking']); //student add meeting booking
+Route::get('AddMeetingBooking', [MeetingController::class, 'MeetingInterface']);//student add meeting booking
 Route::get('ViewMeetingBooking', [MeetingController::class, 'viewMeetingBooking']); //student view meeting
 Route::get('EditMeetingBooking', [MeetingController::class, 'editMeetingBooking']); //student edit meetig booking
 Route::get('RetriveMeeting', [MeetingController::class, 'retriveMeeting']); //sv view meeting list detail
 Route::get('AddMeetingStatus', [MeetingController::class, 'addMeetingStatus']); //sv add meeting status
 
-Route::post('AddMeetingBooking', 'MeetingController@addMeetingBooking');
+Route::post('MeetingBooking', 'MeetingController@addMeetingBooking');
+
 
 //Logbook
 use App\Http\Controllers\LogbookController;
 
 Route::get('LogbookStudent', [LogbookController::class, 'logbookview']);
-Route::get('LogbookEdit', [LogbookController::class, 'logbookEdit']);
+Route::get('/editlogbook/{id}', [LogbookController::class, 'showLogbook']);
 Route::get('LogbookAdd', [LogbookController::class, 'logbookAdd']);
 Route::get('LogbookDelete', [LogbookController::class, 'logbookDelete']);
 Route::get('LogbookViewStd', [LogbookController::class, 'logbookstudentview']);
+//Route::get('/editlogbook/{id}','App\Http\Controllers\LogbookController@showLogbook');
 
-Route::post('Add', 'LogbookController@AddLogbook');
+
+Route::post('AddLogBook', 'LogbookController@AddLogbook');
+Route::post('deletelogbook','LogbookController@deletelogbook');
+Route::post('/editlogbook/{id}','LogbookController@updateLogbook');
 
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;
 
-Route::get('ViewSVList',[SvHuntingController::class, 'viewSVList']); //View sv list
+Route::get('ViewSvList',[SvHuntingController::class, 'viewSVList']); //View sv list
 Route::get('/search','SvHuntingController@search');
+Route::get('EditSv', [SvHuntingController::class, 'EditSv']);
+
 Route::get('Addsv',[SvHuntingController::class, 'addsv']);
 Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
 Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);

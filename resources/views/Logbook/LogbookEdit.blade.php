@@ -24,7 +24,7 @@
   <div class="content">
     <div>
       <h2><br></h2>
-      <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Add Logbook</h4>
+      <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Edit Logbook</h4>
     </div>
 
     <div class="container">
@@ -34,18 +34,20 @@
             <h2><br></h2>
             
             
-            <form action="/action_page.php">
-                  <label for="title">Title   :</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  <input type="text" id="title" name="title" style="width:220px;"><br>
-                  <label for="lname">Date :</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                  <input type="text" id="Date" name="Date" style="width:220px;"><br>
-                  <label for="PreparedBy">Prepared By :</label>&nbsp&nbsp
-                  <input type="text" id="PreparedBy" name="PreparedBY" style="width:220px;"><br>
-                  
-                  <textarea name="message" rows="10" cols="80"></textarea>
+            <form action = "/editlogbook/<?php echo $users[0]->id; ?>" method = "post" class="form-group" style="width:70%; margin-left:15%;" action="/action_page.php">
+              <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
+
+                  <label for="Title">Title   :</label><br>
+                  <input type="text" id="Title" name="Title" value = '<?php echo$users[0]->Title; ?>' style="width:500px;"><br><br>
+                  <label for="name">Date :</label><br>
+                  <input type="text" id="Date" name="Date" value = '<?php echo$users[0]->Date; ?>' style="width:500px;"><br><br>
+                  <label for="Prepared_by">Prepared By :</label><br>
+                  <input type="text" id="Prepared_by" name="Prepared_by" value = '<?php echo$users[0]->Prepared_by; ?>' style="width:220px;"><br><br>
+                  <label for="Description">Description :</label><br>
+                  <textarea name="Description" value = '<?php echo$users[0]->Description; ?>' rows="10" cols="80"></textarea>
                   <br><br>
                   <h2><br></h2>
-                  <a class="button-73" role="button" href="EditProfile">Add logbook</a>
+                  <button type="submit"  value = "Edit " class="btn btn-primary">Save Logbook</button>
                   <h2><br></h2>
             </form>
           </td>

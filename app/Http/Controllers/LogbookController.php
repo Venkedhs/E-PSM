@@ -8,16 +8,18 @@ use Illuminate\Support\Facades\DB;
 
 class LogbookController extends Controller
 {
-    function logbookview()
+    public function logbookview()
     {
         return View('Logbook.LogbookStudent');
     }
 
-    function logbookstudentview()
+    public function logbookstudentview()
     {
-        
-        return View('LogbookViewStd');
-         //var_dump($users);
+        $USER_ID = session()->get('logged_user');
+        $users = DB::table('logbooks')
+            ->where('userID', '=', $USER_ID)
+            ->get();   
+        return View('Logbook.LogbookViewStd')->with('meetings', $users);
     }
 
     function logbookDelete()
@@ -37,11 +39,43 @@ class LogbookController extends Controller
         $logbook = new logbook;
         
         $logbook->Title = $Title;
-        $logboook->Prepared_by = $Prepared_by;
+        $logbook->Prepared_by = $Prepared_by;
         $logbook->Date = $Date;
+        $logbook->userID= session()->get('logged_user');
         $logbook->Description = $Description;
         $logbook->save();
         return redirect("LogbookViewStd");
-
     }
+    
+    function deletelogbook(Request $req)
+    {
+        DB::table('logbooks')->where('id', '=', $req->id)->delete();
+        return redirect("LogbookViewStd");
+    }
+
+    public function showLogbook ($id)
+        {
+        $users = DB::select('select * from logbooks where id = ?',[$id]);
+        return view ('Logbook/LogbookEdit',['users'=>$users]);
+        }
+    public function updateLogbook(Request $request,$id)
+        {
+            $Title = $request->input('$Title');
+            $Prepared_by = $request->input('$Prepared_by');
+            $Date = $request->input('$Date');
+            $Description = $request->input('$Description');
+
+            DB::table('Logbooks')->where('id', $id)
+            ->update(['Title' => $request->Title]);
+            DB::table('Logbooks')->where('id', $id)
+            ->update(['Prepared_by' => $request->Prepared_by]);
+            DB::table('Logbooks')->where('id', $id)
+            ->update(['Date' => $request->Date]);
+            DB::table('Logbooks')->where('id', $id)
+            ->update(['Description' => $request->Description]);
+
+        echo "Record updated successfully.<br/>";
+        echo '<a href = "/LogbookViewStd">Click Here</a> to go back.';
+        }
+
 }

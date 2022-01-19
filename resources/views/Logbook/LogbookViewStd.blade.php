@@ -69,14 +69,11 @@ $roles = session()->get('user_type');
   <center>
 			 <h1 style="text-align: center;">Logbook</h1>
        </br>
-		<button><a href="AddMeetingBooking" >Add Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingBooking'))
+		<button><a href="LogbookStudent" >Add Logbook<class="nav-link  @if(url()->current() ===  URL::to('/LogbookStudent'))
 		active
 		@endif">
 		</a></button>
-		<button><a href="ViewMeetingBooking" >View Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/ViewMeetingBooking'))
-		active
-		@endif">
-		</a></button>
+
 		
   </center>
 			<center><table>
@@ -89,13 +86,21 @@ $roles = session()->get('user_type');
 			</tr> 
       @foreach ($meetings as $data)
    <tr>
-            <td>:&nbsp&nbsp{{$data->Title}}</td>
-            <td>:&nbsp&nbsp{{$data->Prepared_by}}</td>
-            <td>:&nbsp&nbsp{{$data->Date}}</td>
-            <td>:&nbsp&nbsp{{$data->Description}}</td>
+            <td>&nbsp&nbsp{{$data->Title}}</td>
+            <td>&nbsp&nbsp{{$data->Prepared_by}}</td>
+            <td>&nbsp&nbsp{{$data->Date}}</td>
+            <td>&nbsp&nbsp{{$data->Description}}</td>
 			<td>
 			<td>
-			<td><input type="submit" name="Submit" id="Submit" value="Delete" method="post"><td>
+				<form action="deletelogbook" method="post">
+					  @csrf
+					<input type="hidden" name="id" value="{{$data->id}}">
+				<td><input type="submit" name="Submit" id="Submit" value="Delete" onclick="my_button_click_handler" class="button-73"><td>
+				<td>
+				<a class="button-73" href = 'editlogbook/{{ $data->id }}'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEdit
+			    </td>
+				</form>
+				
 
     </tr>
      @endforeach
@@ -107,5 +112,10 @@ $roles = session()->get('user_type');
 
 </div>
 <!-- ./wrapper -->
-
+<script>
+function my_button_click_handler()
+{
+alert('Are should want delete');
+}
+</script>
 <x-footer-new />
