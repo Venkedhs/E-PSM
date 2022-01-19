@@ -54,7 +54,7 @@ $roles = session()->get('user_type');
    	<button><a href="Addsv" >Add Supervisor<class="nav-link  @if(url()->current() ===  URL::to('/Addsv'))
 		active
 		@endif"></class="nav-link></a></button>
-		<button><a href="ViewSVList" >View Supervisor List<class="nav-link  @if(url()->current() ===  URL::to('/ViewSVList'))
+		<button><a href="ViewSVListCo" >View Supervisor List<class="nav-link  @if(url()->current() ===  URL::to('/ViewSVListCo'))
 		active
 		@endif"></class="nav-link></a></button>
 
