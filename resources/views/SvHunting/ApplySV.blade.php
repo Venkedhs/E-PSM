@@ -77,22 +77,10 @@ $roles = session()->get('user_type');
         <td><td>
           <p>
           <td>
-          <label for=Name>Name:</label>
+          <label for=Student_ID>Student ID:</label>
           </td>
           <td>
-          <input type="Name" name="Name">
-          </td>
-          </p>
-        </td>
-        </tr>
-
-        <td><td>
-          <p>
-          <td>
-          <label for=Supervisor_ID>Supervisor ID:</label>
-          </td>
-          <td>
-          <input type="Supervisor_ID" name="Supervisor_ID">
+          <input type="text" name="Student_ID">
           </td>
           </p>
         </td>
@@ -101,22 +89,10 @@ $roles = session()->get('user_type');
         <td><td>
           <p>
           <td>
-          <label for=Faculty>Faculty:</label>
+          <label for=Student_Name>Student Name:</label>
           </td>
           <td>
-          <input type="Faculty" name="Faculty">
-          </td>
-          </p>
-        </td>
-        </tr>
-
-        <td><td>
-          <p>
-          <td>
-          <label for="Expertise">Expertise:</label>
-          </td>
-          <td>
-          <input type="text" name="Expertise"> 
+          <input type="text" name="Student_Name">
           </td>
           </p>
         </td>
@@ -125,10 +101,10 @@ $roles = session()->get('user_type');
         <td><td>
           <p>
           <td>
-          <label for="Office">Office:</label>
+          <label for=Student_Email>Student Email:</label>
           </td>
           <td>
-          <input type="text" name="Office"> 
+          <input type="int" name="Student_Email">
           </td>
           </p>
         </td>
@@ -137,7 +113,31 @@ $roles = session()->get('user_type');
         <td><td>
           <p>
           <td>
-          <label for="Phon_Number">Phone Number:</label>
+          <label for="Student_No">Student No:</label>
+          </td>
+          <td>
+          <input type="int" name="Student_No"> 
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for="Course">Course:</label>
+          </td>
+          <td>
+          <input type="text" name="Course"> 
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for="Project_Title">Project Title:</label>
           </td>
           <td>
           <input type="text" name="Phone_Number"> 
@@ -149,48 +149,33 @@ $roles = session()->get('user_type');
         <td><td>
           <p>
           <td>
-          <label for="Email">Email:</label>
+          <label for="topic">Summaries Topic:</label>
           </td>
           <td>
-          <input type="text" name="Email"> 
+          <input type="text" name="topic"> 
           </td>
           </p>
         </td>
         </tr>
 
+        <td><td>
+          <p>
+          <td>
+          <label for="reason">Reason Apply sv:</label>
+          </td>
+          <td>
+          <input type="text" name="reason"> 
+          </td>
+          </p>
+        </td>
+        </tr>
+
+
+
       </table>
       <br>
 
-        <table>
-
-
-          <tr class="center">
-            <br><br>
-            <th>Student ID</th>
-            <th>Student Name</th>
-            <th>Student Email</th>
-            <th>Student No</th>
-            <th>Course</th>
-            <th>Project Title</th>
-            <th>Summaries Topic</th>
-            <th>Reason Apply sv</th>
-          </tr>
-          @foreach ($SvHunting as $data)
-          <tr>
-            <h3>:&nbsp&nbsp{{$student[0]->userID}}</h3>
-            <h3>:&nbsp&nbsp{{$student[0]->name}}</h3>
-            <h3>:&nbsp&nbsp{{$student[0]->email}}</h3>
-            <h3>:&nbsp&nbsp{{$student[0]->no}}</h3>
-            <h3>:&nbsp&nbsp{{$student[0]->course}}</h3>
-            <h3>:&nbsp&nbsp{{$student[0]->title}}</h3>
-            <h3>:&nbsp&nbsp{{$student[0]->topic}}</h3>
-            <h3>:&nbsp&nbsp{{$student[0]->reason}}</h3>
-                        
-          </tr>
-         @endforeach
-
-			    </table>
-			  </center>
+        
 
 			<center>
 			<input type="submit" name="Submit" id="Submit" value="Submit" method="post">
