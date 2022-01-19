@@ -11,4 +11,9 @@ class students extends Model
     protected $fillable = [
         'faculty', 'course', 'sem_year', 'address', 'psm_title', 'userID', 'sv_name'
     ];
+
+    public function title()
+    {
+        return $this->hasOne(Title::class, 'stdID','stdID');
+    }
 }

@@ -111,6 +111,7 @@ Route::get('EditSv', [SvHuntingController::class, 'EditSv']);
 Route::get('Addsv',[SvHuntingController::class, 'addsv']);
 Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
 Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);
+
 //Route::get('Addsv', [SvHuntingController::class, 'SvHuntingInterface']);
 //Route::get('Addsv',[SvHuntingController::class, 'addsv']);
 //Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
@@ -143,7 +144,56 @@ Route::group(['prefix' => 'manage-inventory', 'as' => 'manage-inventory.'], func
         ->name('approval');
 });
 
+use App\Http\Controllers\ManageTitleController;
+use App\Http\Controllers\ManageProposalController;
 
+// manage title
+Route::group(['prefix' => 'manage-title', 'as' => 'manage-title.'], function (){
+    Route::get('/view', [ManageTitleController::class, 'index'])
+        ->name('view');
+    Route::get('/my-title', [ManageTitleController::class, 'myTitles'])
+        ->name('my-titles');
 
+    Route::get('/edit/{title_id}', [ManageTitleController::class, 'edit'])
+        ->name('edit');
+    Route::post('/update/{title_id}', [ManageTitleController::class, 'update'])
+        ->name('update');
 
+    Route::post('/add', [ManageTitleController::class, 'add'])
+        ->name('add');
+    Route::get('/delete/{title_id}', [ManageTitleController::class, 'delete'])
+        ->name('delete');
+
+    Route::get('/view-book', [ManageTitleController::class, 'book'])
+        ->name('view-book');
+    Route::get('/book-title/{title_id}', [ManageTitleController::class, 'bookTitle'])
+        ->name('book-title');
+    Route::get('/remove-book-title/{title_id}', [ManageTitleController::class, 'removeBook'])
+        ->name('remove-book-title');
+});
+
+// manage proposal
+Route::group(['prefix' => 'manage-proposal', 'as' => 'manage-proposal.'], function () {
+    Route::get('/proposals', [ManageProposalController::class, 'viewAll'])
+        
+        ->name('view-all');
+    Route::get('/proposal', [ManageProposalController::class, 'viewOne'])
+       
+        ->name('view-one');
+    Route::get('/detail/{proposal_id}', [ManageProposalController::class, 'detail'])
+        ->name('detail');
+
+    Route::get('/add', [ManageProposalController::class, 'create'])
+        ->name('create');
+    Route::post('/store', [ManageProposalController::class, 'store'])
+        ->name('store');
+
+    Route::get('/edit/{proposal_id}', [ManageProposalController::class, 'edit'])
+        ->name('edit');
+    Route::post('/update/{proposal_id}', [ManageProposalController::class, 'update'])
+        ->name('update');
+
+    Route::post('/approval/{proposal_id}', [ManageProposalController::class, 'setApproval'])
+        ->name('approval');
+});
 
