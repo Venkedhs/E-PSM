@@ -110,6 +110,7 @@ Route::get('LogbookViewStd', [LogbookController::class, 'logbookstudentview']);
 Route::post('AddLogBook', 'LogbookController@AddLogbook');
 Route::post('deletelogbook','LogbookController@deletelogbook');
 Route::post('/editlogbook/{id}','LogbookController@updateLogbook');
+//huhuhu
 
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;
