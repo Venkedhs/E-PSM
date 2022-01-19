@@ -99,18 +99,12 @@ Route::post('AddMeetingBooking', 'MeetingController@addMeetingBooking');
 use App\Http\Controllers\LogbookController;
 
 Route::get('LogbookStudent', [LogbookController::class, 'logbookview']);
-<<<<<<< Updated upstream
 Route::get('LogbookEdit', [LogbookController::class, 'logbookEdit']);
 Route::get('LogbookAdd', [LogbookController::class, 'logbookAdd']);
 Route::get('LogbookDelete', [LogbookController::class, 'logbookDelete']);
 Route::get('LogbookViewStd', [LogbookController::class, 'logbookstudentview']);
 
 Route::post('Add', 'LogbookController@AddLogbook');
-=======
-Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
-Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
-Route::get('LogbookEdit', [LogbookController::class, 'logbookedit']);
->>>>>>> Stashed changes
 
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;
@@ -120,7 +114,6 @@ Route::get('/search','SvHuntingController@search');
 Route::get('Addsv',[SvHuntingController::class, 'addsv']);
 Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
 Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);
-<<<<<<< Updated upstream
 
 //Route::get('Addsv', [SvHuntingController::class, 'SvHuntingInterface']);
 //Route::get('Addsv',[SvHuntingController::class, 'addsv']);
@@ -210,5 +203,3 @@ Route::group(['prefix' => 'manage-proposal', 'as' => 'manage-proposal.'], functi
         ->name('approval');
 });
 
-=======
->>>>>>> Stashed changes
