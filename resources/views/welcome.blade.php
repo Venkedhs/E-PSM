@@ -53,7 +53,7 @@
     $flashdata = "{{$message}}";
     if ($flashdata) {
         Swal.fire({
-            title: 'Error!',
+            title: 'Wrong Password!',
             text: $flashdata,
             icon: 'error',
             confirmButtonText: 'Close'

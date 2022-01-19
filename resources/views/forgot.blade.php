@@ -1,4 +1,5 @@
 <x-header/>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <div class="container-fluid">
 	<div class="row" style="margin-top: 50px; margin-bottom: 50px;">
@@ -68,3 +69,17 @@
 		</div>
 	</div>
 </div>
+<script>
+    @error('success')
+    $flashdata = "{{$message}}";
+    if ($flashdata) {
+        Swal.fire({
+            title: 'Successfully changed!',
+            text: $flashdata,
+            icon: 'success',
+            confirmButtonText: 'Close'
+        })
+    }
+    @enderror
+</script>
+

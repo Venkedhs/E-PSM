@@ -71,7 +71,7 @@ class UsersController extends Controller
                 ];
 
                 // return back with custom error message
-                // return redirect()->back()->withInput()->withErrors($custom_msg);
+                return redirect()->back()->withInput()->withErrors($custom_msg);
             }
         } else {
 
