@@ -1,3 +1,21 @@
+<?php
+
+$logged_user = session()->get('logged_user');
+$user_name = session()->get('name');
+$roles = session()->get('user_type');
+
+// $all = session()->all();
+
+// var_dump($all);
+?>
+?>
+<style>
+	table.center{
+		margin-left :auto;
+		margin-right :auto;
+	}
+	}
+</style>
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -50,10 +68,15 @@
 		 </style>
   <center>
 			 <h1 style="text-align: center;">MEETING BOOKING LIST</h1>
-        </br>
-        <button <a href="">Add Meeting Booking</a></button>
-        <button <a href="" target="_blank">View Meeting Booking </a></button>
-        <button <a href="" target="_blank">Edit Meeting Booking </a></button>
+       </br>
+		<button><a href="AddMeetingBooking" >Add Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/AddMeetingBooking'))
+		active
+		@endif">
+		</a></button>
+		<button><a href="ViewMeetingBooking" >View Meeting Booking<class="nav-link  @if(url()->current() ===  URL::to('/ViewMeetingBooking'))
+		active
+		@endif">
+		</a></button>
 		
   </center>
 			<center><table>
@@ -66,7 +89,22 @@
 				<th>Purpose</th>
 				<th>Status</th>
 				<th>Comment</th>	
-			</tr>
+			</tr> 
+      @foreach ($meetings as $data)
+   <tr>
+            <td>:&nbsp&nbsp{{$data->userID}}</td>
+            <td>:&nbsp&nbsp{{$data->Meeting_Date}}</td>
+            <td>:&nbsp&nbsp{{$data->Meeting_Start}}</td>
+            <td>:&nbsp&nbsp{{$data->Meeting_End}}</td>
+            <td>:&nbsp&nbsp{{$data->Meeting_Purpose}}</td>
+			<td>
+			<td>
+			<td><input type="submit" name="Submit" id="Submit" value="Delete" method="post"><td>
+
+    </tr>
+     @endforeach
+      
+        
 
 		</table></center>
   <!-- /.content -->

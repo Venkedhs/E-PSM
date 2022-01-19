@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMeetingSVTable extends Migration
+class SvHunting extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,15 @@ class CreateMeetingSVTable extends Migration
      */
     public function up()
     {
-        Schema::create('_meeting_s_v', function (Blueprint $table) {
+        Schema::create('SvHunting', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('title');
+            $table->string('topic');
+            $table->string('reason');
+            $table->string('name');
+            $table->string('expertise');
+            $table->string('status');
+            
         });
     }
 
@@ -26,6 +32,6 @@ class CreateMeetingSVTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_meeting_s_v');
+        //
     }
 }
