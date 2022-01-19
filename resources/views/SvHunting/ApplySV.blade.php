@@ -67,7 +67,103 @@ $roles = session()->get('user_type');
 		<fieldset>
 		     <br>
 		     <center>
+                 <br>
+
+       <table class="center">
+        <form action="Addsv" method="POST" >
+                @csrf
+        <center>
+        
+        <td><td>
+          <p>
+          <td>
+          <label for=Name>Name:</label>
+          </td>
+          <td>
+          <input type="Name" name="Name">
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for=Supervisor_ID>Supervisor ID:</label>
+          </td>
+          <td>
+          <input type="Supervisor_ID" name="Supervisor_ID">
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for=Faculty>Faculty:</label>
+          </td>
+          <td>
+          <input type="Faculty" name="Faculty">
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for="Expertise">Expertise:</label>
+          </td>
+          <td>
+          <input type="text" name="Expertise"> 
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for="Office">Office:</label>
+          </td>
+          <td>
+          <input type="text" name="Office"> 
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for="Phon_Number">Phone Number:</label>
+          </td>
+          <td>
+          <input type="text" name="Phone_Number"> 
+          </td>
+          </p>
+        </td>
+        </tr>
+
+        <td><td>
+          <p>
+          <td>
+          <label for="Email">Email:</label>
+          </td>
+          <td>
+          <input type="text" name="Email"> 
+          </td>
+          </p>
+        </td>
+        </tr>
+
+      </table>
+      <br>
+
         <table>
+
+
           <tr class="center">
             <br><br>
             <th>Student ID</th>

@@ -89,5 +89,10 @@ class SvHuntingController extends Controller
         return View('SvHunting.Addsv'); 
     }
 
+    function editSv(Request $require)
+    {
+        return View('SvHunting.EditSv');
+    }
+
     
 }
