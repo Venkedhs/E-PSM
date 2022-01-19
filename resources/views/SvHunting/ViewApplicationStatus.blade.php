@@ -1,13 +1,4 @@
-<?php
 
-$logged_user = session()->get('logged_user');
-$user_name = session()->get('name');
-$roles = session()->get('user_type');
-
-// $all = session()->all();
-
-// var_dump($all);
-?>
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
