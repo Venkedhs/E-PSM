@@ -69,9 +69,12 @@ class ManageInventoryController extends Controller
 
     public function show($item_id)
     {
+        $userID = session()->get('logged_user');
+        $user = users::where('userID', $userID)->first();
         $item_model = Item::find($item_id);
         return view('ManageInventory.show',[
-            'item' => $item_model
+            'item' => $item_model,
+            'user' => $user
         ]);
     }
 

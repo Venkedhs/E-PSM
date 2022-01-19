@@ -115,13 +115,7 @@
                                 {{ $item->name }}
                             </td>
                             <td class="text-center">
-                            @foreach($users as $user )
-                            @if($item->stdID==$user->userID)
-                            {{$user->name}}
-                            @endif
                             
-
-                            @endforeach 
                                 
 
                             </td>

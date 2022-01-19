@@ -126,7 +126,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								</li>
 
 								<li class="nav-item">
-									<a href="javascript:;" class="nav-link disabled">
+									<a href="/manage-proposal/proposal" class="nav-link ">
 										<i class="fas fa-angle-right nav-icon"></i>
 										<p>2.0 Proposal</p>
 									</a>
@@ -181,7 +181,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
 						<li class="nav-item">
-							<a href="home" class="nav-link  @if(url()->current() ===  URL::to('/home'))
+							<a href="/home" class="nav-link  @if(url()->current() ===  URL::to('/home'))
 								active
 						   @endif">
 								<i class="nav-icon far far fa-edit"></i>
@@ -222,7 +222,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								</li>
 
 								<li class="nav-item">
-									<a href="javascript:;" class="nav-link disabled">
+									<a href="/manage-title/my-title" class="nav-link ">
 										<i class="fas fa-angle-right nav-icon"></i>
 										<p>3.0 Title selection</p>
 									</a>
@@ -277,7 +277,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						</li>
 
 						<li class="nav-item">
-							<a href="semak" class="nav-link @if(url()->current() ===  URL::to('/inventory'))
+							<a href="/manage-inventory/items" class="nav-link @if(url()->current() ===  URL::to('/inventory'))
 								active
 						   @endif
 						  ">

@@ -16,4 +16,9 @@ class students extends Model
     {
         return $this->hasOne(Title::class, 'stdID','stdID');
     }
+
+    public function detail()
+    {
+        return $this->belongsTo(users::class, 'stdID', 'userID');
+    }
 }

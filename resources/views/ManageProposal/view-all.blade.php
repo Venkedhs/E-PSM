@@ -1,99 +1,99 @@
 <x-header-new/>
 
 <div class="content-wrapper">
-    <section class="content-header">
+<section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>View Proposal</h1>
+                    <h1>Manage Proposals</h1>
                 </div>
+
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
     </section>
-
     <section class="content">
-        <form action="#" method="post">
-            @csrf
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card card-primary">
-                        <div class="card-header">
-                            <h3 class="card-title">General</h3>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">All Title</h3>
 
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="inputName">Project Name</label>
-                                <input type="text" id="inputName" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputDescription">Project Description</label>
-                                <textarea id="inputDescription" class="form-control" rows="4"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputStatus">Status</label>
-                                <select id="inputStatus" class="form-control custom-select">
-                                    <option selected disabled>Select one</option>
-                                    <option>On Hold</option>
-                                    <option>Canceled</option>
-                                    <option>Success</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputClientCompany">Client Company</label>
-                                <input type="text" id="inputClientCompany" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputProjectLeader">Project Leader</label>
-                                <input type="text" id="inputProjectLeader" class="form-control">
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
-                </div>
-                <div class="col-md-6">
-                    <div class="card card-secondary">
-                        <div class="card-header">
-                            <h3 class="card-title">Budget</h3>
-
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="inputEstimatedBudget">Estimated budget</label>
-                                <input type="number" id="inputEstimatedBudget" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputSpentBudget">Total amount spent</label>
-                                <input type="number" id="inputSpentBudget" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEstimatedDuration">Estimated project duration</label>
-                                <input type="number" id="inputEstimatedDuration" class="form-control">
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <a href="#" class="btn btn-secondary">Cancel</a>
-                    <input type="submit" value="Create new Porject" class="btn btn-success float-right">
-                </div>
+            <div class="card-body">
+                <table class="table table-striped projects">
+                    <thead>
+                    <tr>
+                        <th style="width: 1%">
+                            #
+                        </th>
+                        <th style="width: 10%">
+                            Title
+                        </th>
+                        <th class="text-center" style="width: 1%">
+                            Student
+                        </th>
+                        <th class="text-center" style="width: 1%">
+                            Supervisor
+                        </th>
+                        <th class="text-center" style="width: 1%">
+                            Status
+                        </th>
+                        <th style="width: 2%" class="text-center">
+                            Action
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($titles as $title)
+                            <tr>
+                                <td>
+                                    {{ ++$count }}
+                                </td>
+                                <td>
+                                    {{ $title->psm_title }}
+                                </td>
+                                <td class="text-center">
+                                    {{ (is_null($title->student)) ? 'none' : $title->student->name }}
+                                </td>
+                                <td>
+                                    by: {{ $title->supervisor->name }}
+                                </td>
+                                <td class="text-center">
+                                    @switch($title->proposal->status_approval)
+                                        @case(\App\Classes\Constants\ApprovalStatus::APPROVED)
+                                            <span class="badge bg-success">approved</span>
+                                        @break
+                                        @case(\App\Classes\Constants\ApprovalStatus::PENDING)
+                                            <span class="badge bg-warning">pending</span>
+                                        @break
+                                        @case(\App\Classes\Constants\ApprovalStatus::REJECTED)
+                                            <span class="badge bg-danger">rejected</span>
+                                        @break
+                                    @endswitch
+                                </td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary">Action</button>
+                                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="{{ route('manage-proposal.detail', $title->title_id) }}">View</a>
+                                            <a class="dropdown-item" href="{{ route('manage-proposal.edit', $title->proposal->proposal_id) }}">Edit</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
-        </form>
+            <div class="card-footer"></div>
+        </div>
     </section>
 </div>
 

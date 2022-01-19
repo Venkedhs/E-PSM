@@ -144,10 +144,12 @@ Route::group(['prefix' => 'manage-inventory', 'as' => 'manage-inventory.'], func
         ->name('approval');
 });
 
-use App\Http\Controllers\ManageTitleController;
-use App\Http\Controllers\ManageProposalController;
+
+
 
 // manage title
+use App\Http\Controllers\ManageTitleController;
+
 Route::group(['prefix' => 'manage-title', 'as' => 'manage-title.'], function (){
     Route::get('/view', [ManageTitleController::class, 'index'])
         ->name('view');
@@ -172,13 +174,14 @@ Route::group(['prefix' => 'manage-title', 'as' => 'manage-title.'], function (){
         ->name('remove-book-title');
 });
 
+
 // manage proposal
+use App\Http\Controllers\ManageProposalController;
+
 Route::group(['prefix' => 'manage-proposal', 'as' => 'manage-proposal.'], function () {
-    Route::get('/proposals', [ManageProposalController::class, 'viewAll'])
-        
+    Route::get('/proposals', [ManageProposalController::class, 'viewAll'])  
         ->name('view-all');
     Route::get('/proposal', [ManageProposalController::class, 'viewOne'])
-       
         ->name('view-one');
     Route::get('/detail/{proposal_id}', [ManageProposalController::class, 'detail'])
         ->name('detail');
