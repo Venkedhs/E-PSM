@@ -42,12 +42,12 @@
                   <label for="name">Date :</label><br>
                   <input type="text" id="Date" name="Date" value = '<?php echo$users[0]->Date; ?>' style="width:500px;"><br><br>
                   <label for="Prepared_by">Prepared By :</label><br>
-                  <input type="text" id="Prepared_by" name="Prepared_by" value = '<?php echo$users[0]->Prepared_by; ?>' style="width:220px;"><br><br>
+                  <input type="text" id="Prepared_by" name="Prepared_by" value = '<?php echo$users[0]->Prepared_by; ?>' style="width:500px;"><br><br>
                   <label for="Description">Description :</label><br>
                   <textarea name="Description" value = '<?php echo$users[0]->Description; ?>' rows="10" cols="80"></textarea>
                   <br><br>
                   <h2><br></h2>
-                  <button type="submit"  value = "Edit " class="btn btn-primary">Save Logbook</button>
+                  <button type="submit"  value = "Edit " class="button-73" >Save Logbook</button>
                   <h2><br></h2>
             </form>
           </td>

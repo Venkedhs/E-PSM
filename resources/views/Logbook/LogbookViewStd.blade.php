@@ -97,7 +97,7 @@ $roles = session()->get('user_type');
 					<input type="hidden" name="id" value="{{$data->id}}">
 				<td><input type="submit" name="Submit" id="Submit" value="Delete" onclick="my_button_click_handler" class="button-73"><td>
 				<td>
-				<a class="button-73" href = 'editlogbook/{{ $data->id }}'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEdit
+				<a class="button-73" href = 'editlogbook/{{ $data->id }}'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEdit&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 			    </td>
 				</form>
 				
