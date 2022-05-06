@@ -194,7 +194,7 @@ Route::group(['prefix' => 'manage-proposal', 'as' => 'manage-proposal.'], functi
         ->name('view-all');
     Route::get('/proposal', [ManageProposalController::class, 'viewOne'])
         ->name('view-one');
-    Route::get('/detail/{proposal_id}', [ManageProposalController::class, 'detail'])
+    Route::get('/detail/{proposal_id}', [ManageProposalContr  oller::class, 'detail'])
         ->name('detail');
 
     Route::get('/add', [ManageProposalController::class, 'create'])
