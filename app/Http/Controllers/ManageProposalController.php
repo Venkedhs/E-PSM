@@ -92,10 +92,10 @@ class ManageProposalController extends Controller
         $proposal = Proposal::with('title')->find($proposal_id);
         $title = $proposal->title;
 
-        if ($user->can('set approval proposal')) {
-            $proposal->status_approval = $request->status_approval;
-            $proposal->save();
-        }
+        // if ($user->can('set approval proposal')) {
+        //     $proposal->status_approval = $request->status_approval;
+        //     $proposal->save();
+        // }
 
         return redirect()->route('manage-proposal.detail',$proposal_id);
     }

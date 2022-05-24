@@ -125,19 +125,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									</a>
 								</li>
 
+							
 								<li class="nav-item">
-									<a href="/manage-proposal/proposal" class="nav-link ">
-										<i class="fas fa-angle-right nav-icon"></i>
-										<p>2.0 Proposal</p>
-									</a>
-								</li>
-
-								<li class="nav-item">
-									<a href="/manage-title/view" class="nav-link @if(url()->current() ===  URL::to('/manage-title/view'))
+									<a href="/manage-title/my-title" class="nav-link @if(url()->current() ===  URL::to('/manage-title/my-title'))
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
-										<p>3.0 Title selection</p>
+										<p>2.0 Title selection</p>
 									</a>
 								</li>
 
@@ -146,7 +140,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
-										<p>4.0 Logbook</p>
+										<p>3.0 Logbook</p>
 									</a>
 								</li>
 
@@ -155,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
-										<p>5.0 Meeting</p>
+										<p>4.0 Meeting</p>
 									</a>
 								</li>
 							</ul>
@@ -217,14 +211,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<li class="nav-item">
 									<a href="/manage-proposal/proposals" class="nav-link ">
 										<i class="fas fa-angle-right nav-icon"></i>
-										<p>2.0 Proposal</p>
+										<p>1.0 Proposal</p>
 									</a>
 								</li>
 
 								<li class="nav-item">
-									<a href="/manage-title/my-title" class="nav-link ">
+									<a href="/manage-title/my-title-sv" class="nav-link ">
 										<i class="fas fa-angle-right nav-icon"></i>
-										<p>3.0 Title selection</p>
+										<p>2.0 Title selection</p>
 									</a>
 								</li>
 
@@ -233,7 +227,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
-										<p>4.0 Logbook</p>
+										<p>3.0 Logbook</p>
 									</a>
 								</li>
 
@@ -242,7 +236,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
-										<p>5.0 Meeting</p>
+										<p>4.0 Meeting</p>
 									</a>
 								</li>
 							</ul>

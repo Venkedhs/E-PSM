@@ -115,7 +115,7 @@ Route::post('/editlogbook/{id}','LogbookController@updateLogbook');
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;
 
-Route::get('ViewSvList',[SvHuntingController::class, 'viewSVList']); //View sv list
+Route::get('ViewSVList',[SvHuntingController::class, 'viewSVList']); //View sv list
 Route::get('/search','SvHuntingController@search');
 Route::get('EditSv', [SvHuntingController::class, 'EditSv']);
 
@@ -166,6 +166,8 @@ Route::group(['prefix' => 'manage-title', 'as' => 'manage-title.'], function (){
         ->name('view');
     Route::get('/my-title', [ManageTitleController::class, 'myTitles'])
         ->name('my-titles');
+    Route::get('/my-title-sv', [ManageTitleController::class, 'myTitlessv'])
+        ->name('my-titles-sv');
 
     Route::get('/edit/{title_id}', [ManageTitleController::class, 'edit'])
         ->name('edit');
