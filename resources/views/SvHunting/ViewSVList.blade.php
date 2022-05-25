@@ -9,22 +9,17 @@ $roles = session()->get('user_type');
 // var_dump($all);
 
 ?>
-?>
-
-
-
-
 <x-header-new />
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
-  <style>
+<style>
 
   table.center{
     margin-left :auto;
     margin-right :auto;
   }
-  
+
 </style>
 
   <!-- Content Header (Page header) -->
@@ -44,7 +39,7 @@ $roles = session()->get('user_type');
     </div><!-- /.container-fluid -->
   </div>
   <!-- /.content-header -->
- 
+
   <style>
   .form-center form {
     position: absolute;
@@ -55,14 +50,14 @@ $roles = session()->get('user_type');
 </style>
   <!-- Main content -->
   <style type="text/css">
-      <style>
-            
+      <styl>
+
         table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
         border: 1px solid black;
         width: 100%;}
-        
+
         th {
         border: 1px solid black;
         border-collapse: collapse;
@@ -70,9 +65,8 @@ $roles = session()->get('user_type');
         padding: 6px;
         background:#B2B2B2;
         color: black;}
-        
+
       </style>
-     </style>
   <center>
        <h1 style="text-align: center;">Supervisor List</h1>
        </br>
@@ -80,7 +74,7 @@ $roles = session()->get('user_type');
     active
     @endif">
     </a></button> //student apply sv
-    <button><a href="ViewSVList" >View Supervisor list<class="nav-link  @if(url()->current() ===  URL::to('/ViewSVList')) 
+    <button><a href="ViewSVList" >View Supervisor list<class="nav-link  @if(url()->current() ===  URL::to('/ViewSVList'))
     active
     @endif">
     </a></button> // view sv list
@@ -96,20 +90,20 @@ $roles = session()->get('user_type');
         <table>
           <tr class="center">
             <br><br>
-            
+
             <th>Supervisor Name</th>
             <th>Expertise</th>
           </tr>
           @foreach ($SvHunting as $data)
           <tr>
-            
-            <h3>:&nbsp&nbsp{{$supervisors[0]->name}}</h3>
-            <h3>:&nbsp&nbsp{{$supervisors[0]->expertise}}</h3>
-                        
+
+            <h3>:&nbsp&nbsp{{$data[0]->name}}</h3>
+            <h3>:&nbsp&nbsp{{$data[0]->expertise}}</h3>
+
           </tr>
          @endforeach
-      
-        
+
+
 
     </table>
   </center>

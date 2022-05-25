@@ -115,7 +115,12 @@ Route::post('/editlogbook/{id}','LogbookController@updateLogbook');
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;
 
+<<<<<<< Updated upstream
 Route::get('ViewSVList',[SvHuntingController::class, 'viewSVList']); //View sv list
+=======
+Route::get('/ViewSvList','SvHuntingController@viewSVList');
+//Route::get('ViewSvList',[SvHuntingController::class, 'LihatSV']); //View sv list
+>>>>>>> Stashed changes
 Route::get('/search','SvHuntingController@search');
 Route::get('EditSv', [SvHuntingController::class, 'EditSv']);
 

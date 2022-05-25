@@ -117,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 							<ul class="nav nav-treeview  ">
 								<li class="nav-item ">
-									<a href="ViewSVList" class="nav-link  @if(url()->current() ===  URL::to('/ViewSVList'))
+									<a href="ViewSvList" class="nav-link  @if(url()->current() ===  URL::to('/ViewSvList'))
 								active
 								@endif">
 										<i class="fas fa-angle-right nav-icon"></i>
@@ -125,6 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									</a>
 								</li>
 
+<<<<<<< Updated upstream
 							
 								<li class="nav-item">
 									<a href="/manage-title/my-title" class="nav-link @if(url()->current() ===  URL::to('/manage-title/my-title'))
@@ -132,6 +133,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
 										<p>2.0 Title selection</p>
+=======
+								{{-- <li class="nav-item">
+									<a href="/manage-proposal/proposal" class="nav-link ">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>2.0 Proposal</p>
+									</a>
+								</li> --}}
+
+								<li class="nav-item">
+									<a href="/manage-title/view" class="nav-link @if(url()->current() ===  URL::to('/manage-title/view'))
+								active
+						   @endif">
+										<i class="fas fa-angle-right nav-icon"></i>
+										<p>2.0 Proposal</p>
+>>>>>>> Stashed changes
 									</a>
 								</li>
 
@@ -156,7 +172,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 						</li>
 
-						<li class="nav-item">
+						{{-- <li class="nav-item">
 							<a href="/manage-inventory/items" class="nav-link @if(url()->current() ===  URL::to('/inventory'))
 								active
 						   @endif
@@ -166,7 +182,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									Inventory
 								</p>
 							</a>
-						</li>
+						</li> --}}
 					</ul>
 				</nav>
 				<!-- /.sidebar-menu -->
@@ -208,17 +224,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 							<ul class="nav nav-treeview  ">
 
-								<li class="nav-item">
+								{{-- <li class="nav-item">
 									<a href="/manage-proposal/proposals" class="nav-link ">
 										<i class="fas fa-angle-right nav-icon"></i>
 										<p>1.0 Proposal</p>
 									</a>
-								</li>
+								</li> --}}
 
 								<li class="nav-item">
 									<a href="/manage-title/my-title-sv" class="nav-link ">
 										<i class="fas fa-angle-right nav-icon"></i>
+<<<<<<< Updated upstream
 										<p>2.0 Title selection</p>
+=======
+										<p>1.0 Proposal</p>
+>>>>>>> Stashed changes
 									</a>
 								</li>
 
@@ -227,7 +247,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
+<<<<<<< Updated upstream
 										<p>3.0 Logbook</p>
+=======
+										<p>2.0 Logbook</p>
+>>>>>>> Stashed changes
 									</a>
 								</li>
 
@@ -236,7 +260,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
+<<<<<<< Updated upstream
 										<p>4.0 Meeting</p>
+=======
+										<p>3.0 Meeting</p>
+>>>>>>> Stashed changes
 									</a>
 								</li>
 							</ul>

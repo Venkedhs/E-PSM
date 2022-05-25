@@ -10,7 +10,7 @@ use App\Models\users;
 
 class SvHuntingController extends Controller
 {
-    //create function to read from form 
+    //create function to read from form
     public function search()
     {
     $search_text =$_GET['query'];
@@ -30,17 +30,29 @@ class SvHuntingController extends Controller
             ->get();
         return View('SvHunting.ApplySV')->with('sv_hunting', $users);
          //var_dump($students);
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     }
 
 
     function applySV(Request $require)// student apply supervisor
     {
 
+<<<<<<< Updated upstream
         // $title = $req->input('title');
         // $topic = $req->input('topic');
         // $reason = $req->input('reason');
         
  
+=======
+        $title = $req->input('title');
+        $topic = $req->input('topic');
+        $reason = $req->input('reason');
+
+
+>>>>>>> Stashed changes
         //table Sv hunting
         // $SvHunting = new svHunting;
         // $SvHunting->userID = session()->get('logged_user');
@@ -57,9 +69,16 @@ class SvHuntingController extends Controller
         $users = DB::table('svhunting')
             ->where('userID', '=', $USER_ID)
           ->get();
+<<<<<<< Updated upstream
         return View('SvHunting.ViewSVList')->with('SvHunting', $users);;
          //var_dump($users);
+=======
+          //var_dump($users); die();
+        return View('SvHunting.ViewSVList')->with('SvHunting', $users);
+
+>>>>>>> Stashed changes
     }
+
 
     function viewApplicationStatus(Request $require)//student view application status
     {
@@ -72,7 +91,7 @@ class SvHuntingController extends Controller
     }
 
     //Coordinator
-    function CoordinatorInterface() 
+    function CoordinatorInterface()
      {
          $USER_ID = session()->get('logged_user');
          $users = DB::table('users')
@@ -81,7 +100,7 @@ class SvHuntingController extends Controller
              ->get();
          return View('SvHunting.Addsv')->with('sv_hunting_co', $users);
          // var_dump($Coordinator);
- 
+
      }
      function viewSVListCo(Request $require) // view supervisor list
     {
@@ -93,15 +112,14 @@ class SvHuntingController extends Controller
          var_dump($users);
     }
 
-    function addsv(Request $req) 
+    function addsv(Request $req)
     {
-        return View('SvHunting.Addsv'); 
+        return View('SvHunting.Addsv');
     }
 
     function editSv(Request $require)
     {
         return View('SvHunting.EditSv');
     }
-
-    
 }
+
