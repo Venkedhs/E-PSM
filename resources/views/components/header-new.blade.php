@@ -125,15 +125,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 									</a>
 								</li>
 
-<<<<<<< Updated upstream
-							
-								<li class="nav-item">
-									<a href="/manage-title/my-title" class="nav-link @if(url()->current() ===  URL::to('/manage-title/my-title'))
-								active
-						   @endif">
-										<i class="fas fa-angle-right nav-icon"></i>
-										<p>2.0 Title selection</p>
-=======
 								{{-- <li class="nav-item">
 									<a href="/manage-proposal/proposal" class="nav-link ">
 										<i class="fas fa-angle-right nav-icon"></i>
@@ -147,7 +138,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>
 										<p>2.0 Proposal</p>
->>>>>>> Stashed changes
 									</a>
 								</li>
 
