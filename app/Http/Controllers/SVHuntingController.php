@@ -30,29 +30,17 @@ class SvHuntingController extends Controller
             ->get();
         return View('SvHunting.ApplySV')->with('sv_hunting', $users);
          //var_dump($students);
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     }
 
 
     function applySV(Request $require)// student apply supervisor
     {
 
-<<<<<<< Updated upstream
-        // $title = $req->input('title');
-        // $topic = $req->input('topic');
-        // $reason = $req->input('reason');
-        
- 
-=======
         $title = $req->input('title');
         $topic = $req->input('topic');
         $reason = $req->input('reason');
 
 
->>>>>>> Stashed changes
         //table Sv hunting
         // $SvHunting = new svHunting;
         // $SvHunting->userID = session()->get('logged_user');
@@ -69,14 +57,9 @@ class SvHuntingController extends Controller
         $users = DB::table('svhunting')
             ->where('userID', '=', $USER_ID)
           ->get();
-<<<<<<< Updated upstream
-        return View('SvHunting.ViewSVList')->with('SvHunting', $users);;
-         //var_dump($users);
-=======
           //var_dump($users); die();
         return View('SvHunting.ViewSVList')->with('SvHunting', $users);
 
->>>>>>> Stashed changes
     }
 
 
