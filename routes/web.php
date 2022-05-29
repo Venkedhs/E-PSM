@@ -117,13 +117,16 @@ Route::post('/editlogbook/{id}','LogbookController@updateLogbook');
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;
 
-Route::get('ViewSvList','SvHuntingController@viewSVList');
+Route::get('ViewSVList','SvHuntingController@viewSVList');
+Route::get('ViewSVListCo','SvHuntingController@viewSVListCo');
+Route::get('Addsv','SvHuntingController@Add');
+Route::get('ApplySV','SvHuntingController@Apply');
 //Route::get('ViewSvList',[SvHuntingController::class, 'LihatSV']); //View sv list
 Route::get('/search','SvHuntingController@search');
 Route::get('EditSv', [SvHuntingController::class, 'EditSv']);
 
-Route::get('Addsv',[SvHuntingController::class, 'addsv']);
-Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
+// Route::get('Addsv',[SvHuntingController::class, 'addsv']);
+// Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
 Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);
 
 //Route::get('Addsv', [SvHuntingController::class, 'SvHuntingInterface']);

@@ -70,7 +70,7 @@ $roles = session()->get('user_type');
   <center>
        <h1 style="text-align: center;">Supervisor List</h1>
        </br>
-    <button><a href="ApplySV" >Add Superisor<class="nav-link  @if(url()->current() ===  URL::to('/ApplySV'))
+    <button><a href="ApplySV" >Add Supervisor<class="nav-link  @if(url()->current() ===  URL::to('/ApplySV'))
     active
     @endif">
     </a></button> //student apply sv
