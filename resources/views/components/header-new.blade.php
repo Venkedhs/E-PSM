@@ -229,7 +229,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								</li>
 
 								<li class="nav-item">
-									<a href="/LogbookStudent" class="nav-link  @if(url()->current() ===  URL::to('/LogbookStudent'))
+									<a href="/LogbookSupervisor" class="nav-link  @if(url()->current() ===  URL::to('/LogbookSupervisor'))
 								active
 						   @endif">
 										<i class="fas fa-angle-right nav-icon"></i>

@@ -32,8 +32,8 @@
         <tr>
           <td width="30%" class="topleft">
             <h2><br></h2>
-            
-            
+
+
             <form action="AddLogBook" method="POST">
               @csrf
                   <label for="Title">Title   :</label><br>
@@ -42,21 +42,21 @@
                   <input type="text" id="Date" name="Date" style="width:500px;"><br>
                   <label for="Prepared_by">Prepared By :</label>
                   <input type="text" id="Prepared_by" name="Prepared_by" style="width:500px;"><br>
-                  <br>   
-                  <label for="Description">Description :</label>   
-                  <br>               
+                  <br>
+                  <label for="Description">Description :</label>
+                  <br>
                   <textarea rows="10" cols="80" type="text" id="Description" name="Description" style="width:500px;"></textarea>
                   <br><br>
                   <h2><br></h2>
                   <input type="submit" name="Submit" id="Submit" value="Submit" class="button-73">
-                  <a class="button-73" role="button" href="LogbookViewStd">View Logbook</a>
+                  <a class="button-73" role="button" href="LogbookViewSV">View Logbook</a>
                   <h2><br></h2>
             </form>
           </td>
         </tr>
-        
+
       </table>
-      
+
       <h2><br></h2>
 
     </div><!-- /.container -->

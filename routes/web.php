@@ -100,10 +100,12 @@ Route::post('MeetingBooking', 'MeetingController@addMeetingBooking');
 use App\Http\Controllers\LogbookController;
 
 Route::get('LogbookStudent', [LogbookController::class, 'logbookview']);
+Route::get('LogbookSupervisor', [LogbookController::class, 'logbookviewSV']);
 Route::get('/editlogbook/{id}', [LogbookController::class, 'showLogbook']);
 Route::get('LogbookAdd', [LogbookController::class, 'logbookAdd']);
 Route::get('LogbookDelete', [LogbookController::class, 'logbookDelete']);
 Route::get('LogbookViewStd', [LogbookController::class, 'logbookstudentview']);
+Route::get('LogbookViewSV', [LogbookController::class, 'logbooksupervisorview']);
 //Route::get('/editlogbook/{id}','App\Http\Controllers\LogbookController@showLogbook');
 
 
