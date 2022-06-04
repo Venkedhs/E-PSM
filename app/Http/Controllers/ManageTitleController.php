@@ -9,6 +9,7 @@ use App\Models\Title;
 use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ManageTitleController extends Controller
 {
@@ -32,7 +33,17 @@ class ManageTitleController extends Controller
 
         return view('ManageTitle.myTitle',['titles' => $titles, 'count' => $count]);
     }
+    public function myTitlessv()
+    {
+        $svID = session()->get('logged_user');
 
+        $titles = DB::table('titles')
+            ->Join('users', 'titles.stdID', '=', 'users.userID')
+            ->get();
+        $count = 0;
+
+        return view('ManageTitle.myTitlesv',['titles' => $titles, 'count' => $count]);
+    }
     public function edit($title_id)
     {
         $title = Title::where('title_id',$title_id)->first();
@@ -53,10 +64,10 @@ class ManageTitleController extends Controller
 
 
     public function add(Request $request)
-    {
+    {   $USER_ID = session()->get('logged_user');
         $title = new Title;
 
-        $title->stdID = 'none';
+        $title->stdID = $USER_ID;
         $title->svID = session()->get('logged_user');
         $title->psm_title = $request->psm_title;
     

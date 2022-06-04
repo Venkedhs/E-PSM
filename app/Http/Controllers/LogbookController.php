@@ -13,12 +13,29 @@ class LogbookController extends Controller
         return View('Logbook.LogbookStudent');
     }
 
+    public function logbookviewSV()
+    {
+        $USER_ID = session()->get('logged_user');
+        $users = DB::table('logbooks')
+            ->get();
+        return View('Logbook.LogbookSupervisor')->with('meetings', $users);
+    }
+
     public function logbookstudentview()
     {
         $USER_ID = session()->get('logged_user');
         $users = DB::table('logbooks')
             ->where('userID', '=', $USER_ID)
-            ->get();   
+            ->get();
+        return View('Logbook.LogbookViewStd')->with('meetings', $users);
+    }
+
+    public function logbooksupervisorview()
+    {
+        $USER_ID = session()->get('logged_user');
+        $users = DB::table('logbooks')
+
+            ->get();
         return View('Logbook.LogbookViewStd')->with('meetings', $users);
     }
 
@@ -27,17 +44,17 @@ class LogbookController extends Controller
         return View('Logbook.LogbookDelete');
     }
 
-    function AddLogbook(Request $req) 
+    function AddLogbook(Request $req)
     {
-        
+
         $Title = $req->input('Title');
         $Prepared_by = $req->input('Prepared_by');
         $Date = $req->input('Date');
         $Description = $req->input('Description');
- 
-        
+
+
         $logbook = new logbook;
-        
+
         $logbook->Title = $Title;
         $logbook->Prepared_by = $Prepared_by;
         $logbook->Date = $Date;
@@ -46,7 +63,7 @@ class LogbookController extends Controller
         $logbook->save();
         return redirect("LogbookViewStd");
     }
-    
+
     function deletelogbook(Request $req)
     {
         DB::table('logbooks')->where('id', '=', $req->id)->delete();

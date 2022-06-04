@@ -10,7 +10,7 @@ use App\Models\users;
 
 class SvHuntingController extends Controller
 {
-    //create function to read from form 
+    //create function to read from form
     public function search()
     {
     $search_text =$_GET['query'];
@@ -29,38 +29,54 @@ class SvHuntingController extends Controller
             ->where('sv_hunting.userID', '=', $USER_ID)
             ->get();
         return View('SvHunting.ApplySV')->with('sv_hunting', $users);
-         var_dump($students);
+         //var_dump($students);
+    }
 
-    //}
-
-
-    function applySV(Request $require)// student apply supervisor
+    function viewSVList() // view supervisor list
     {
+        $USER_ID = session()->get('logged_user');
+        $users = DB::table('svhunting')
+            ->where('userID', '=', $USER_ID)
+          ->get();
+          //var_dump($users); die();
+        return View('SvHunting.ViewSVList')->with('SvHunting', $users);
+    }
 
+    function viewSVListCo() // view supervisor list
+    {
+        $USER_ID = session()->get('logged_user');
+        $users = DB::table('svhunting')
+            ->where('userID', '=', $USER_ID)
+          ->get();
+          //var_dump($users); die();
+        return View('SvHunting.ViewSVListCo')->with('SvHunting', $users);
+    }
+
+    function Add() // view supervisor list
+    {
+        $USER_ID = session()->get('logged_user');
+        $users = DB::table('svhunting')
+            ->where('userID', '=', $USER_ID)
+          ->get();
+          //var_dump($users); die();
+        return View('SvHunting.Addsv')->with('SvHunting', $users);
+
+    }
+
+    function Apply(Request $req) // view supervisor list
+    {
         $title = $req->input('title');
         $topic = $req->input('topic');
         $reason = $req->input('reason');
-        
- 
-        //table Sv hunting
-        $SvHunting = new svHunting;
-        $SvHunting->userID = session()->get('logged_user');
-        $SvHunting->title = $title;
-        $SvHunting->topic = $topic;
-        $SvHunting->reason = $reason;
-        $SvHunting->save();
-        return redirect("viewSVList");
-    }
-
-    function viewSVList(Request $require) // view supervisor list
-    {
         $USER_ID = session()->get('logged_user');
-        $users = DB::table('sv_hunting')
+        $users = DB::table('svhunting')
             ->where('userID', '=', $USER_ID)
           ->get();
-        return View('SvHunting.ViewSVList');
-         var_dump($users);
+          //var_dump($users); die();
+        return View('SvHunting.ApplySV')->with('SvHunting', $users);
+
     }
+
 
     function viewApplicationStatus(Request $require)//student view application status
     {
@@ -73,7 +89,7 @@ class SvHuntingController extends Controller
     }
 
     //Coordinator
-    function CoordinatorInterface() 
+    function CoordinatorInterface()
      {
          $USER_ID = session()->get('logged_user');
          $users = DB::table('users')
@@ -82,27 +98,17 @@ class SvHuntingController extends Controller
              ->get();
          return View('SvHunting.Addsv')->with('sv_hunting_co', $users);
          // var_dump($Coordinator);
- 
-     }
-     function viewSVListCo(Request $require) // view supervisor list
-    {
-        $USER_ID = session()->get('logged_user');
-        $users = DB::table('sv_hunting_co')
-            ->where('userID', '=', $USER_ID)
-          ->get();
-        return View('SvHunting.viewSVListCo');
-         var_dump($users);
-    }
 
-    function addsv(Request $req) 
+     }
+
+    function addsv(Request $req)
     {
-        return View('SvHunting.Addsv'); 
+        return View('SvHunting.Addsv');
     }
 
     function editSv(Request $require)
     {
         return View('SvHunting.EditSv');
     }
-
-    
 }
+

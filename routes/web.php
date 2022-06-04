@@ -100,10 +100,12 @@ Route::post('MeetingBooking', 'MeetingController@addMeetingBooking');
 use App\Http\Controllers\LogbookController;
 
 Route::get('LogbookStudent', [LogbookController::class, 'logbookview']);
+Route::get('LogbookSupervisor', [LogbookController::class, 'logbookviewSV']);
 Route::get('/editlogbook/{id}', [LogbookController::class, 'showLogbook']);
 Route::get('LogbookAdd', [LogbookController::class, 'logbookAdd']);
 Route::get('LogbookDelete', [LogbookController::class, 'logbookDelete']);
 Route::get('LogbookViewStd', [LogbookController::class, 'logbookstudentview']);
+Route::get('LogbookViewSV', [LogbookController::class, 'logbooksupervisorview']);
 //Route::get('/editlogbook/{id}','App\Http\Controllers\LogbookController@showLogbook');
 
 
@@ -115,12 +117,16 @@ Route::post('/editlogbook/{id}','LogbookController@updateLogbook');
 //SV Hunting
 use App\Http\Controllers\SvHuntingController;
 
-Route::get('ViewSvList',[SvHuntingController::class, 'viewSVList']); //View sv list
+Route::get('ViewSVList','SvHuntingController@viewSVList');
+Route::get('ViewSVListCo','SvHuntingController@viewSVListCo');
+Route::get('Addsv','SvHuntingController@Add');
+Route::get('ApplySV','SvHuntingController@Apply');
+//Route::get('ViewSvList',[SvHuntingController::class, 'LihatSV']); //View sv list
 Route::get('/search','SvHuntingController@search');
 Route::get('EditSv', [SvHuntingController::class, 'EditSv']);
 
-Route::get('Addsv',[SvHuntingController::class, 'addsv']);
-Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
+// Route::get('Addsv',[SvHuntingController::class, 'addsv']);
+// Route::get('ApplySV', [SvHuntingController::class, 'applySV']);
 Route::get('ViewApplicationStatus',[SvHuntingController::class, 'viewApplicationStatus']);
 
 //Route::get('Addsv', [SvHuntingController::class, 'SvHuntingInterface']);
@@ -166,6 +172,8 @@ Route::group(['prefix' => 'manage-title', 'as' => 'manage-title.'], function (){
         ->name('view');
     Route::get('/my-title', [ManageTitleController::class, 'myTitles'])
         ->name('my-titles');
+    Route::get('/my-title-sv', [ManageTitleController::class, 'myTitlessv'])
+        ->name('my-titles-sv');
 
     Route::get('/edit/{title_id}', [ManageTitleController::class, 'edit'])
         ->name('edit');
