@@ -32,8 +32,8 @@
         <tr>
           <td width="30%" class="topleft">
             <h2><br></h2>
-            
-            
+
+
             <form action = "/editlogbook/<?php echo $users[0]->id; ?>" method = "post" class="form-group" style="width:70%; margin-left:15%;" action="/action_page.php">
               <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
 
@@ -52,9 +52,9 @@
             </form>
           </td>
         </tr>
-        
+
       </table>
-      
+
       <h2><br></h2>
 
     </div><!-- /.container -->

@@ -190,7 +190,7 @@ Route::group(['prefix' => 'manage-title', 'as' => 'manage-title.'], function (){
 use App\Http\Controllers\ManageProposalController;
 
 Route::group(['prefix' => 'manage-proposal', 'as' => 'manage-proposal.'], function () {
-    Route::get('/proposals', [ManageProposalController::class, 'viewAll'])  
+    Route::get('/proposals', [ManageProposalController::class, 'viewAll'])
         ->name('view-all');
     Route::get('/proposal', [ManageProposalController::class, 'viewOne'])
         ->name('view-one');
@@ -210,4 +210,4 @@ Route::group(['prefix' => 'manage-proposal', 'as' => 'manage-proposal.'], functi
     Route::post('/approval/{proposal_id}', [ManageProposalController::class, 'setApproval'])
         ->name('approval');
 });
-
+//test
